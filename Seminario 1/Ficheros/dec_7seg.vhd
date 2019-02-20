@@ -35,11 +35,11 @@ BEGIN
              seg_digit <= "0100100";
        	WHEN "0110" =>
              seg_digit <= "0100000";
-			WHEN "0111" =>
+		WHEN "0111" =>
              seg_digit <= "0001111";
-			WHEN "1000" =>
+		WHEN "1000" =>
              seg_digit <= "0000000";
-			WHEN "1001" =>
+		WHEN "1001" =>
              seg_digit <= "0000100"; 
          WHEN "1010" =>
              seg_digit <= "0001000";
