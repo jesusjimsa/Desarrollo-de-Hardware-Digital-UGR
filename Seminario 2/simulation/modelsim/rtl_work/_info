@@ -1,0 +1,42 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\DHD_Seminario_2\simulation\modelsim
+Econtador_8bits
+Z1 w1551192082
+Z2 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
+Z3 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
+Z4 DPx3 std 6 textio 0 22 G^o2zK;Vh4eVdKTVo98653
+Z5 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z6 dC:\DHD_Seminario_2\simulation\modelsim
+Z7 8C:/DHD_Seminario_2/contador_8bits.vhd
+Z8 FC:/DHD_Seminario_2/contador_8bits.vhd
+l0
+L8
+Va`R23h6P]KVS013IKl4j`1
+!s100 X4zA>GQeaXQ?[Wlmod]N:3
+Z9 OV;C;10.0d;49
+31
+Z10 !s108 1551198795.984000
+Z11 !s90 -reportprogress|300|-93|-work|work|C:/DHD_Seminario_2/contador_8bits.vhd|
+Z12 !s107 C:/DHD_Seminario_2/contador_8bits.vhd|
+Z13 o-93 -work work -O0
+Z14 tExplicit 1
+Afuncional
+R2
+R3
+R4
+R5
+DEx4 work 14 contador_8bits 0 22 a`R23h6P]KVS013IKl4j`1
+l16
+L14
+VMBdeISDEd3Wg:BOc07M:j1
+!s100 Bh87=W63:1fOjJ3^b29lU0
+R9
+31
+R10
+R11
+R12
+R13
+R14
