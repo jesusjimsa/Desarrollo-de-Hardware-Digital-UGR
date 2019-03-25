@@ -1,0 +1,112 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\p1\simulation\modelsim
+Eip_ram_256_x_16
+Z1 w1553006499
+Z2 DPx3 std 6 textio 0 22 G^o2zK;Vh4eVdKTVo98653
+Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z4 dC:\p1\simulation\modelsim
+Z5 8C:/p1/IP_RAM_256_x_16.vhd
+Z6 FC:/p1/IP_RAM_256_x_16.vhd
+l0
+L42
+V7L`TJSnZ4HfY3A]7IJgg81
+Z7 OV;C;10.0d;49
+31
+Z8 !s108 1553012149.640000
+Z9 !s90 -reportprogress|300|-93|-work|work|C:/p1/IP_RAM_256_x_16.vhd|
+Z10 !s107 C:/p1/IP_RAM_256_x_16.vhd|
+Z11 o-93 -work work -O0
+Z12 tExplicit 1
+!s100 lTTgM4:RH>7ai;aP<B:d=1
+Asyn
+R2
+R3
+DEx4 work 15 ip_ram_256_x_16 0 22 7L`TJSnZ4HfY3A]7IJgg81
+l87
+L54
+V^VYj3d@@TETneYJ6jhlll0
+R7
+31
+R8
+R9
+R10
+R11
+R12
+!s100 feMhf2W@9jOS5W<e6PzX;0
+Emy_scomp_v0_0
+R1
+Z13 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
+Z14 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
+R2
+R3
+R4
+Z15 8C:/p1/my_scomp_v0_0.vhd
+Z16 FC:/p1/my_scomp_v0_0.vhd
+l0
+L7
+VAj9kjkMB3B5g4:G>b2L=z0
+!s100 EZmH?idY6XojRJEJ]nd5N3
+R7
+31
+Z17 !s108 1553012149.828000
+Z18 !s90 -reportprogress|300|-93|-work|work|C:/p1/my_scomp_v0_0.vhd|
+Z19 !s107 C:/p1/my_scomp_v0_0.vhd|
+R11
+R12
+Artl
+R13
+R14
+R2
+R3
+DEx4 work 13 my_scomp_v0_0 0 22 Aj9kjkMB3B5g4:G>b2L=z0
+l57
+L16
+VL8?A`L9:D=J37mm78fDZ42
+!s100 GYGFDTC]3dGWeIFLDhje10
+R7
+31
+R17
+R18
+R19
+R11
+R12
+Eprocesador_v0_0
+R1
+R13
+R14
+R2
+R3
+R4
+Z20 8C:/p1/procesador_v0_0.vhd
+Z21 FC:/p1/procesador_v0_0.vhd
+l0
+L15
+VIZW52bPH=Q?>FMKniPYF[2
+R7
+31
+Z22 !s108 1553012149.718000
+Z23 !s90 -reportprogress|300|-93|-work|work|C:/p1/procesador_v0_0.vhd|
+Z24 !s107 C:/p1/procesador_v0_0.vhd|
+R11
+R12
+!s100 Raj4oMN@]SaY[h8Ucb^kS1
+Artl
+R13
+R14
+R2
+R3
+DEx4 work 15 procesador_v0_0 0 22 IZW52bPH=Q?>FMKniPYF[2
+l35
+L28
+V6lhcl9>h:]To0W9E47iY11
+R7
+31
+R22
+R23
+R24
+R11
+R12
+!s100 ElT>?EgzWlGHYo15XOAUg2
