@@ -1,5 +1,5 @@
 
-State Machine - |my_scomp_v0_0|procesador_v0_0:PROC|state
+State Machine - |my_scomp_v0_0|procesador_v1_1:PROC|state
 Name state.jump state.store1 state.store0 state.load1 state.load0 state.add1 state.add0 state.decode state.fetch1 state.fetch0 state.reset_pc 
 state.reset_pc 0 0 0 0 0 0 0 0 0 0 0 
 state.fetch0 0 0 0 0 0 0 0 0 0 1 1 

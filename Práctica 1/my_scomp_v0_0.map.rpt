@@ -1,5 +1,5 @@
 Analysis & Synthesis report for my_scomp_v0_0
-Tue Mar 19 16:44:18 2019
+Mon Mar 25 11:56:34 2019
 Quartus II 32-bit Version 12.0 Build 263 08/02/2012 Service Pack 2 SJ Web Edition
 
 
@@ -15,14 +15,15 @@ Quartus II 32-bit Version 12.0 Build 263 08/02/2012 Service Pack 2 SJ Web Editio
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
   9. Analysis & Synthesis IP Cores Summary
- 10. State Machine - |my_scomp_v0_0|procesador_v0_0:PROC|state
- 11. General Register Statistics
- 12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Source assignments for IP_RAM_256_x_16:MEM|altsyncram:altsyncram_component|altsyncram_dfi1:auto_generated
- 14. Parameter Settings for User Entity Instance: IP_RAM_256_x_16:MEM|altsyncram:altsyncram_component
- 15. altsyncram Parameter Settings by Entity Instance
- 16. Elapsed Time Per Partition
- 17. Analysis & Synthesis Messages
+ 10. State Machine - |my_scomp_v0_0|procesador_v1_1:PROC|state
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Source assignments for IP_RAM_256_x_16:MEM|altsyncram:altsyncram_component|altsyncram_dfi1:auto_generated
+ 15. Parameter Settings for User Entity Instance: IP_RAM_256_x_16:MEM|altsyncram:altsyncram_component
+ 16. altsyncram Parameter Settings by Entity Instance
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
 
 
 
@@ -48,15 +49,15 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                       ;
 +------------------------------------+-----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Mar 19 16:44:18 2019         ;
+; Analysis & Synthesis Status        ; Successful - Mon Mar 25 11:56:34 2019         ;
 ; Quartus II 32-bit Version          ; 12.0 Build 263 08/02/2012 SP 2 SJ Web Edition ;
 ; Revision Name                      ; my_scomp_v0_0                                 ;
 ; Top-level Entity Name              ; my_scomp_v0_0                                 ;
 ; Family                             ; Cyclone IV E                                  ;
-; Total logic elements               ; 90                                            ;
-;     Total combinational functions  ; 68                                            ;
-;     Dedicated logic registers      ; 51                                            ;
-; Total registers                    ; 51                                            ;
+; Total logic elements               ; 57                                            ;
+;     Total combinational functions  ; 37                                            ;
+;     Dedicated logic registers      ; 33                                            ;
+; Total registers                    ; 33                                            ;
 ; Total pins                         ; 42                                            ;
 ; Total virtual pins                 ; 0                                             ;
 ; Total memory bits                  ; 4,096                                         ;
@@ -157,7 +158,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 ; Processors                 ; Number ;
 +----------------------------+--------+
-; Number detected on machine ; 2      ;
+; Number detected on machine ; 4      ;
 ; Maximum allowed            ; 1      ;
 +----------------------------+--------+
 
@@ -168,7 +169,6 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                            ; Library ;
 +----------------------------------+-----------------+----------------------------------------+-------------------------------------------------------------------------+---------+
 ; IP_RAM_256_x_16.vhd              ; yes             ; User Wizard-Generated File             ; C:/p1/IP_RAM_256_x_16.vhd                                               ;         ;
-; procesador_v0_0.vhd              ; yes             ; User VHDL File                         ; C:/p1/procesador_v0_0.vhd                                               ;         ;
 ; my_scomp_v0_0.vhd                ; yes             ; User VHDL File                         ; C:/p1/my_scomp_v0_0.vhd                                                 ;         ;
 ; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/altera/12.0sp2/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
 ; stratix_ram_block.inc            ; yes             ; Megafunction                           ; c:/altera/12.0sp2/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
@@ -181,6 +181,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; altdpram.inc                     ; yes             ; Megafunction                           ; c:/altera/12.0sp2/quartus/libraries/megafunctions/altdpram.inc          ;         ;
 ; db/altsyncram_dfi1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/p1/db/altsyncram_dfi1.tdf                                            ;         ;
 ; programa.mif                     ; yes             ; Auto-Found Memory Initialization File  ; C:/p1/programa.mif                                                      ;         ;
+; procesador_v1_1.vhd              ; yes             ; Auto-Found VHDL File                   ; C:/p1/procesador_v1_1.vhd                                               ;         ;
 +----------------------------------+-----------------+----------------------------------------+-------------------------------------------------------------------------+---------+
 
 
@@ -189,28 +190,28 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 90          ;
+; Estimated Total logic elements              ; 57          ;
 ;                                             ;             ;
-; Total combinational functions               ; 68          ;
+; Total combinational functions               ; 37          ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 30          ;
-;     -- 3 input functions                    ; 28          ;
+;     -- 4 input functions                    ; 13          ;
+;     -- 3 input functions                    ; 14          ;
 ;     -- <=2 input functions                  ; 10          ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 46          ;
-;     -- arithmetic mode                      ; 22          ;
+;     -- normal mode                          ; 30          ;
+;     -- arithmetic mode                      ; 7           ;
 ;                                             ;             ;
-; Total registers                             ; 51          ;
-;     -- Dedicated logic registers            ; 51          ;
+; Total registers                             ; 33          ;
+;     -- Dedicated logic registers            ; 33          ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
 ; I/O pins                                    ; 42          ;
 ; Total memory bits                           ; 4096        ;
 ; Maximum fan-out node                        ; reloj~input ;
-; Maximum fan-out                             ; 67          ;
-; Total fan-out                               ; 633         ;
-; Average fan-out                             ; 2.89        ;
+; Maximum fan-out                             ; 49          ;
+; Total fan-out                               ; 451         ;
+; Average fan-out                             ; 2.65        ;
 +---------------------------------------------+-------------+
 
 
@@ -219,11 +220,11 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                               ; Library Name ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------+--------------+
-; |my_scomp_v0_0                            ; 68 (0)            ; 51 (0)       ; 4096        ; 0            ; 0       ; 0         ; 42   ; 0            ; |my_scomp_v0_0                                                                                    ;              ;
+; |my_scomp_v0_0                            ; 37 (1)            ; 33 (0)       ; 4096        ; 0            ; 0       ; 0         ; 42   ; 0            ; |my_scomp_v0_0                                                                                    ;              ;
 ;    |IP_RAM_256_x_16:MEM|                  ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |my_scomp_v0_0|IP_RAM_256_x_16:MEM                                                                ;              ;
 ;       |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |my_scomp_v0_0|IP_RAM_256_x_16:MEM|altsyncram:altsyncram_component                                ;              ;
 ;          |altsyncram_dfi1:auto_generated| ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |my_scomp_v0_0|IP_RAM_256_x_16:MEM|altsyncram:altsyncram_component|altsyncram_dfi1:auto_generated ;              ;
-;    |procesador_v0_0:PROC|                 ; 68 (68)           ; 51 (51)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |my_scomp_v0_0|procesador_v0_0:PROC                                                               ;              ;
+;    |procesador_v1_1:PROC|                 ; 36 (36)           ; 33 (33)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |my_scomp_v0_0|procesador_v1_1:PROC                                                               ;              ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -248,7 +249,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 Encoding Type:  One-Hot
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |my_scomp_v0_0|procesador_v0_0:PROC|state                                                                                                                     ;
+; State Machine - |my_scomp_v0_0|procesador_v1_1:PROC|state                                                                                                                     ;
 +----------------+------------+--------------+--------------+-------------+-------------+------------+------------+--------------+--------------+--------------+----------------+
 ; Name           ; state.jump ; state.store1 ; state.store0 ; state.load1 ; state.load0 ; state.add1 ; state.add0 ; state.decode ; state.fetch1 ; state.fetch0 ; state.reset_pc ;
 +----------------+------------+--------------+--------------+-------------+-------------+------------+------------+--------------+--------------+--------------+----------------+
@@ -266,29 +267,40 @@ Encoding Type:  One-Hot
 +----------------+------------+--------------+--------------+-------------+-------------+------------+------------+--------------+--------------+--------------+----------------+
 
 
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; procesador_v1_1:PROC|AC[0..15]         ; Stuck at GND due to stuck port data_in ;
+; procesador_v1_1:PROC|state.add1        ; Stuck at GND due to stuck port data_in ;
+; procesador_v1_1:PROC|state.load1       ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 18 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
 +------------------------------------------------------+
 ; General Register Statistics                          ;
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 51    ;
+; Total registers                              ; 33    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 11    ;
+; Number of registers using Asynchronous Clear ; 9     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 40    ;
+; Number of registers using Clock Enable       ; 24    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+--------------------------------------------+----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered                                 ; Example Multiplexer Output ;
-+--------------------+-----------+---------------+----------------------+------------------------+--------------------------------------------+----------------------------+
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; |my_scomp_v0_0|procesador_v0_0:PROC|AC[14] ;                            ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; |my_scomp_v0_0|procesador_v0_0:PROC|PC[1]  ;                            ;
-+--------------------+-----------+---------------+----------------------+------------------------+--------------------------------------------+----------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+-------------------------------------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered                                ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+-------------------------------------------+----------------------------+
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; |my_scomp_v0_0|procesador_v1_1:PROC|PC[0] ;                            ;
++--------------------+-----------+---------------+----------------------+------------------------+-------------------------------------------+----------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------+
@@ -386,7 +398,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -396,7 +408,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 12.0 Build 263 08/02/2012 Service Pack 2 SJ Web Edition
-    Info: Processing started: Tue Mar 19 16:44:14 2019
+    Info: Processing started: Mon Mar 25 11:56:33 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off my_scomp_v0_0 -c my_scomp_v0_0
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file ip_ram_256_x_16.vhd
@@ -431,19 +443,39 @@ Info (12133): Instantiated megafunction "IP_RAM_256_x_16:MEM|altsyncram:altsyncr
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_dfi1.tdf
     Info (12023): Found entity 1: altsyncram_dfi1
 Info (12128): Elaborating entity "altsyncram_dfi1" for hierarchy "IP_RAM_256_x_16:MEM|altsyncram:altsyncram_component|altsyncram_dfi1:auto_generated"
-Info (12128): Elaborating entity "procesador_v0_0" for hierarchy "procesador_v0_0:PROC"
+Warning (12125): Using design file procesador_v1_1.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: procesador_v1_1-rtl
+    Info (12023): Found entity 1: procesador_v1_1
+Info (12128): Elaborating entity "procesador_v1_1" for hierarchy "procesador_v1_1:PROC"
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "AC_out[0]" is stuck at GND
+    Warning (13410): Pin "AC_out[1]" is stuck at GND
+    Warning (13410): Pin "AC_out[2]" is stuck at GND
+    Warning (13410): Pin "AC_out[3]" is stuck at GND
+    Warning (13410): Pin "AC_out[4]" is stuck at GND
+    Warning (13410): Pin "AC_out[5]" is stuck at GND
+    Warning (13410): Pin "AC_out[6]" is stuck at GND
+    Warning (13410): Pin "AC_out[7]" is stuck at GND
+    Warning (13410): Pin "AC_out[8]" is stuck at GND
+    Warning (13410): Pin "AC_out[9]" is stuck at GND
+    Warning (13410): Pin "AC_out[10]" is stuck at GND
+    Warning (13410): Pin "AC_out[11]" is stuck at GND
+    Warning (13410): Pin "AC_out[12]" is stuck at GND
+    Warning (13410): Pin "AC_out[13]" is stuck at GND
+    Warning (13410): Pin "AC_out[14]" is stuck at GND
+    Warning (13410): Pin "AC_out[15]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 148 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 115 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 40 output pins
-    Info (21061): Implemented 90 logic cells
+    Info (21061): Implemented 57 logic cells
     Info (21064): Implemented 16 RAM segments
-Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 1 warning
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 19 warnings
     Info: Peak virtual memory: 314 megabytes
-    Info: Processing ended: Tue Mar 19 16:44:18 2019
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:04
+    Info: Processing ended: Mon Mar 25 11:56:34 2019
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:02
 
 

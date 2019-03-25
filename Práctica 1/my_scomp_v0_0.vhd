@@ -40,7 +40,7 @@ ARCHITECTURE rtl OF my_scomp_v0_0 IS
 	-- Declaracion del componente con versión inicial del procesador 
 	--
 		
-	COMPONENT procesador_v0_0 is
+	COMPONENT procesador_v1_1 is
 	PORT( clock : IN STD_LOGIC;
 		reset : IN STD_LOGIC;
 		AC_out : out std_logic_vector(15 downto 0);
@@ -71,7 +71,7 @@ ARCHITECTURE rtl OF my_scomp_v0_0 IS
 	-- Instancia denominada PROC de la version inicial del procesador
 	--	
 	
-	PROC: procesador_v0_0 PORT MAP (
+	PROC: procesador_v1_1 PORT MAP (
 		clock => reloj, 
 		reset => reset,
 		AC_out => AC_out,
