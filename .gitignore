@@ -155,3 +155,6 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/c,c++,macos,linux,windows,alteraquartusii,visualstudiocode
+
+*.bak
+*.done
