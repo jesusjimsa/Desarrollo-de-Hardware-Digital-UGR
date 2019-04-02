@@ -1,5 +1,5 @@
 Flow report for my_scomp_v0_0
-Tue Apr 02 16:44:53 2019
+Tue Apr 02 17:34:22 2019
 Quartus II 32-bit Version 12.0 Build 263 08/02/2012 Service Pack 2 SJ Web Edition
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------------+
 ; Flow Summary                                                                       ;
 +------------------------------------+-----------------------------------------------+
-; Flow Status                        ; Successful - Tue Apr 02 16:44:53 2019         ;
+; Flow Status                        ; Successful - Tue Apr 02 17:34:22 2019         ;
 ; Quartus II 32-bit Version          ; 12.0 Build 263 08/02/2012 SP 2 SJ Web Edition ;
 ; Revision Name                      ; my_scomp_v0_0                                 ;
 ; Top-level Entity Name              ; my_scomp_v0_0                                 ;
@@ -62,7 +62,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/02/2019 16:43:50 ;
+; Start date & time ; 04/02/2019 17:33:22 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; my_scomp_v0_0       ;
 +-------------------+---------------------+
@@ -73,7 +73,7 @@ applicable agreement for further details.
 +-------------------------------------+------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                        ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 116523109644.155421983001564 ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 116523109644.155422280200444 ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                         ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)       ; <None>        ; --          ; --             ;
 ; IP_TOOL_NAME                        ; RAM: 1-PORT                  ; --            ; --          ; --             ;
@@ -93,12 +93,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 314 MB              ; 00:00:04                           ;
-; Fitter                    ; 00:00:40     ; 1.0                     ; 521 MB              ; 00:00:40                           ;
-; TimeQuest Timing Analyzer ; 00:00:10     ; 1.0                     ; 338 MB              ; 00:00:05                           ;
-; Assembler                 ; 00:00:13     ; 1.0                     ; 288 MB              ; 00:00:12                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 254 MB              ; 00:00:02                           ;
-; Total                     ; 00:01:07     ; --                      ; --                  ; 00:01:03                           ;
+; Analysis & Synthesis      ; 00:00:04     ; 1.0                     ; 314 MB              ; 00:00:04                           ;
+; Fitter                    ; 00:00:40     ; 1.0                     ; 511 MB              ; 00:00:40                           ;
+; TimeQuest Timing Analyzer ; 00:00:04     ; 1.0                     ; 338 MB              ; 00:00:04                           ;
+; Assembler                 ; 00:00:10     ; 1.0                     ; 284 MB              ; 00:00:10                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 254 MB              ; 00:00:02                           ;
+; Total                     ; 00:01:00     ; --                      ; --                  ; 00:01:00                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

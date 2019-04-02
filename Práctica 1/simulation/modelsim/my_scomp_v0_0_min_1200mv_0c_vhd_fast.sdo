@@ -29,7 +29,7 @@
 (DELAYFILE
   (SDFVERSION "2.1")
   (DESIGN "my_scomp_v0_0")
-  (DATE "04/02/2019 16:44:53")
+  (DATE "04/02/2019 17:34:22")
   (VENDOR "Altera")
   (PROGRAM "Quartus II 32-bit")
   (VERSION "Version 12.0 Build 263 08/02/2012 Service Pack 2 SJ Web Edition")
@@ -396,7 +396,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\PROC\|state\~15\\)
+    (INSTANCE \\PROC\|state\~18\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (144:144:144) (196:196:196))
@@ -411,7 +411,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\PROC\|state\~16\\)
+    (INSTANCE \\PROC\|state\~19\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (154:154:154) (210:210:210))
@@ -425,7 +425,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\PROC\|state\~22\\)
+    (INSTANCE \\PROC\|state\~25\\)
     (DELAY
       (ABSOLUTE
         (PORT datab (154:154:154) (207:207:207))
@@ -1013,7 +1013,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\PROC\|state\~23\\)
+    (INSTANCE \\PROC\|state\~26\\)
     (DELAY
       (ABSOLUTE
         (PORT datab (152:152:152) (204:204:204))
@@ -1205,7 +1205,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\PROC\|state\~20\\)
+    (INSTANCE \\PROC\|state\~23\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (342:342:342) (396:396:396))
@@ -2467,7 +2467,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\PROC\|state\~17\\)
+    (INSTANCE \\PROC\|state\~20\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (342:342:342) (397:397:397))
@@ -2592,7 +2592,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\PROC\|MEMadr\[7\]\~8\\)
+    (INSTANCE \\PROC\|Selector25\~0\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (236:236:236) (293:293:293))
@@ -2621,7 +2621,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\PROC\|MEMadr\[6\]\~7\\)
+    (INSTANCE \\PROC\|Selector26\~0\\)
     (DELAY
       (ABSOLUTE
         (PORT datab (236:236:236) (289:289:289))
@@ -2650,7 +2650,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\PROC\|MEMadr\[5\]\~6\\)
+    (INSTANCE \\PROC\|Selector27\~0\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (340:340:340) (411:411:411))
@@ -2711,7 +2711,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\PROC\|MEMadr\[4\]\~5\\)
+    (INSTANCE \\PROC\|Selector28\~0\\)
     (DELAY
       (ABSOLUTE
         (PORT datab (214:214:214) (270:270:270))
@@ -2740,7 +2740,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\PROC\|MEMadr\[3\]\~4\\)
+    (INSTANCE \\PROC\|Selector29\~0\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (236:236:236) (293:293:293))
@@ -2769,7 +2769,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\PROC\|MEMadr\[2\]\~3\\)
+    (INSTANCE \\PROC\|Selector30\~0\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (239:239:239) (292:292:292))
@@ -2830,7 +2830,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\PROC\|MEMadr\[1\]\~2\\)
+    (INSTANCE \\PROC\|Selector31\~0\\)
     (DELAY
       (ABSOLUTE
         (PORT datab (219:219:219) (272:272:272))
@@ -2859,7 +2859,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\PROC\|state\~21\\)
+    (INSTANCE \\PROC\|state\~24\\)
     (DELAY
       (ABSOLUTE
         (PORT datab (153:153:153) (206:206:206))
@@ -2921,7 +2921,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\PROC\|MEMadr\[0\]\~1\\)
+    (INSTANCE \\PROC\|Selector32\~0\\)
     (DELAY
       (ABSOLUTE
         (PORT datab (232:232:232) (288:288:288))
@@ -3133,7 +3133,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\PROC\|state\~18\\)
+    (INSTANCE \\PROC\|state\~21\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (110:110:110) (143:143:143))
@@ -3149,7 +3149,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\PROC\|state\~19\\)
+    (INSTANCE \\PROC\|state\~22\\)
     (DELAY
       (ABSOLUTE
         (PORT datab (341:341:341) (394:394:394))

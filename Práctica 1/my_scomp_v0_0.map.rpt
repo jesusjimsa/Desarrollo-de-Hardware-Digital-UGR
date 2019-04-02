@@ -1,5 +1,5 @@
 Analysis & Synthesis report for my_scomp_v0_0
-Tue Apr 02 16:43:53 2019
+Tue Apr 02 17:33:25 2019
 Quartus II 32-bit Version 12.0 Build 263 08/02/2012 Service Pack 2 SJ Web Edition
 
 
@@ -49,7 +49,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                       ;
 +------------------------------------+-----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Apr 02 16:43:53 2019         ;
+; Analysis & Synthesis Status        ; Successful - Tue Apr 02 17:33:25 2019         ;
 ; Quartus II 32-bit Version          ; 12.0 Build 263 08/02/2012 SP 2 SJ Web Edition ;
 ; Revision Name                      ; my_scomp_v0_0                                 ;
 ; Top-level Entity Name              ; my_scomp_v0_0                                 ;
@@ -248,23 +248,26 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 
 Encoding Type:  One-Hot
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |my_scomp_v0_0|procesador_v1_1:PROC|state                                                                                                                   ;
-+----------------+------------+------------+-------------+------------+--------------+--------------+-------------+------------+--------------+--------------+----------------+
-; Name           ; state.add2 ; state.sub1 ; state.nand1 ; state.jump ; state.store1 ; state.store0 ; state.load1 ; state.add1 ; state.decode ; state.fetch1 ; state.reset_pc ;
-+----------------+------------+------------+-------------+------------+--------------+--------------+-------------+------------+--------------+--------------+----------------+
-; state.reset_pc ; 0          ; 0          ; 0           ; 0          ; 0            ; 0            ; 0           ; 0          ; 0            ; 0            ; 0              ;
-; state.fetch1   ; 0          ; 0          ; 0           ; 0          ; 0            ; 0            ; 0           ; 0          ; 0            ; 1            ; 1              ;
-; state.decode   ; 0          ; 0          ; 0           ; 0          ; 0            ; 0            ; 0           ; 0          ; 1            ; 0            ; 1              ;
-; state.add1     ; 0          ; 0          ; 0           ; 0          ; 0            ; 0            ; 0           ; 1          ; 0            ; 0            ; 1              ;
-; state.load1    ; 0          ; 0          ; 0           ; 0          ; 0            ; 0            ; 1           ; 0          ; 0            ; 0            ; 1              ;
-; state.store0   ; 0          ; 0          ; 0           ; 0          ; 0            ; 1            ; 0           ; 0          ; 0            ; 0            ; 1              ;
-; state.store1   ; 0          ; 0          ; 0           ; 0          ; 1            ; 0            ; 0           ; 0          ; 0            ; 0            ; 1              ;
-; state.jump     ; 0          ; 0          ; 0           ; 1          ; 0            ; 0            ; 0           ; 0          ; 0            ; 0            ; 1              ;
-; state.nand1    ; 0          ; 0          ; 1           ; 0          ; 0            ; 0            ; 0           ; 0          ; 0            ; 0            ; 1              ;
-; state.sub1     ; 0          ; 1          ; 0           ; 0          ; 0            ; 0            ; 0           ; 0          ; 0            ; 0            ; 1              ;
-; state.add2     ; 1          ; 0          ; 0           ; 0          ; 0            ; 0            ; 0           ; 0          ; 0            ; 0            ; 1              ;
-+----------------+------------+------------+-------------+------------+--------------+--------------+-------------+------------+--------------+--------------+----------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |my_scomp_v0_0|procesador_v1_1:PROC|state                                                                                                                                                           ;
++----------------+-------------+------------+------------+------------+------------+-------------+------------+--------------+--------------+-------------+------------+--------------+--------------+----------------+
+; Name           ; state.jzero ; state.jpos ; state.jneg ; state.add2 ; state.sub1 ; state.nand1 ; state.jump ; state.store1 ; state.store0 ; state.load1 ; state.add1 ; state.decode ; state.fetch1 ; state.reset_pc ;
++----------------+-------------+------------+------------+------------+------------+-------------+------------+--------------+--------------+-------------+------------+--------------+--------------+----------------+
+; state.reset_pc ; 0           ; 0          ; 0          ; 0          ; 0          ; 0           ; 0          ; 0            ; 0            ; 0           ; 0          ; 0            ; 0            ; 0              ;
+; state.fetch1   ; 0           ; 0          ; 0          ; 0          ; 0          ; 0           ; 0          ; 0            ; 0            ; 0           ; 0          ; 0            ; 1            ; 1              ;
+; state.decode   ; 0           ; 0          ; 0          ; 0          ; 0          ; 0           ; 0          ; 0            ; 0            ; 0           ; 0          ; 1            ; 0            ; 1              ;
+; state.add1     ; 0           ; 0          ; 0          ; 0          ; 0          ; 0           ; 0          ; 0            ; 0            ; 0           ; 1          ; 0            ; 0            ; 1              ;
+; state.load1    ; 0           ; 0          ; 0          ; 0          ; 0          ; 0           ; 0          ; 0            ; 0            ; 1           ; 0          ; 0            ; 0            ; 1              ;
+; state.store0   ; 0           ; 0          ; 0          ; 0          ; 0          ; 0           ; 0          ; 0            ; 1            ; 0           ; 0          ; 0            ; 0            ; 1              ;
+; state.store1   ; 0           ; 0          ; 0          ; 0          ; 0          ; 0           ; 0          ; 1            ; 0            ; 0           ; 0          ; 0            ; 0            ; 1              ;
+; state.jump     ; 0           ; 0          ; 0          ; 0          ; 0          ; 0           ; 1          ; 0            ; 0            ; 0           ; 0          ; 0            ; 0            ; 1              ;
+; state.nand1    ; 0           ; 0          ; 0          ; 0          ; 0          ; 1           ; 0          ; 0            ; 0            ; 0           ; 0          ; 0            ; 0            ; 1              ;
+; state.sub1     ; 0           ; 0          ; 0          ; 0          ; 1          ; 0           ; 0          ; 0            ; 0            ; 0           ; 0          ; 0            ; 0            ; 1              ;
+; state.add2     ; 0           ; 0          ; 0          ; 1          ; 0          ; 0           ; 0          ; 0            ; 0            ; 0           ; 0          ; 0            ; 0            ; 1              ;
+; state.jneg     ; 0           ; 0          ; 1          ; 0          ; 0          ; 0           ; 0          ; 0            ; 0            ; 0           ; 0          ; 0            ; 0            ; 1              ;
+; state.jpos     ; 0           ; 1          ; 0          ; 0          ; 0          ; 0           ; 0          ; 0            ; 0            ; 0           ; 0          ; 0            ; 0            ; 1              ;
+; state.jzero    ; 1           ; 0          ; 0          ; 0          ; 0          ; 0           ; 0          ; 0            ; 0            ; 0           ; 0          ; 0            ; 0            ; 1              ;
++----------------+-------------+------------+------------+------------+------------+-------------+------------+--------------+--------------+-------------+------------+--------------+--------------+----------------+
 
 
 +------------------------------------------------------------+
@@ -273,7 +276,10 @@ Encoding Type:  One-Hot
 ; Register name                         ; Reason for Removal ;
 +---------------------------------------+--------------------+
 ; procesador_v1_1:PROC|state.store1     ; Lost fanout        ;
-; Total Number of Removed Registers = 1 ;                    ;
+; procesador_v1_1:PROC|state.jneg       ; Lost fanout        ;
+; procesador_v1_1:PROC|state.jpos       ; Lost fanout        ;
+; procesador_v1_1:PROC|state.jzero      ; Lost fanout        ;
+; Total Number of Removed Registers = 4 ;                    ;
 +---------------------------------------+--------------------+
 
 
@@ -407,7 +413,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 12.0 Build 263 08/02/2012 Service Pack 2 SJ Web Edition
-    Info: Processing started: Tue Apr 02 16:43:50 2019
+    Info: Processing started: Tue Apr 02 17:33:21 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off my_scomp_v0_0 -c my_scomp_v0_0
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file ip_ram_256_x_16.vhd
@@ -447,7 +453,7 @@ Warning (12125): Using design file procesador_v1_1.vhd, which is not specified a
     Info (12023): Found entity 1: procesador_v1_1
 Info (12128): Elaborating entity "procesador_v1_1" for hierarchy "procesador_v1_1:PROC"
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 1 registers lost all their fanouts during netlist optimizations.
+Info (17049): 4 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Info (21057): Implemented 203 device resources after synthesis - the final resource count might be different
@@ -457,8 +463,8 @@ Info (21057): Implemented 203 device resources after synthesis - the final resou
     Info (21064): Implemented 16 RAM segments
 Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 2 warnings
     Info: Peak virtual memory: 314 megabytes
-    Info: Processing ended: Tue Apr 02 16:43:53 2019
-    Info: Elapsed time: 00:00:03
+    Info: Processing ended: Tue Apr 02 17:33:25 2019
+    Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:04
 
 

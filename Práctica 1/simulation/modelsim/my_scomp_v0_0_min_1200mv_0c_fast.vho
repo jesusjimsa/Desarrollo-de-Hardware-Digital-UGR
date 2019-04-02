@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus II 32-bit"
 -- VERSION "Version 12.0 Build 263 08/02/2012 Service Pack 2 SJ Web Edition"
 
--- DATE "04/02/2019 16:44:53"
+-- DATE "04/02/2019 17:34:22"
 
 -- 
 -- Device: Altera EP4CE115F29C7 Package FBGA780
@@ -124,9 +124,9 @@ SIGNAL \PROC|Add1~40_combout\ : std_logic;
 SIGNAL \PROC|Add1~46_combout\ : std_logic;
 SIGNAL \PROC|state.store0~q\ : std_logic;
 SIGNAL \PROC|WideOr2~0_combout\ : std_logic;
-SIGNAL \PROC|state~15_combout\ : std_logic;
-SIGNAL \PROC|state~16_combout\ : std_logic;
-SIGNAL \PROC|state~22_combout\ : std_logic;
+SIGNAL \PROC|state~18_combout\ : std_logic;
+SIGNAL \PROC|state~19_combout\ : std_logic;
+SIGNAL \PROC|state~25_combout\ : std_logic;
 SIGNAL \IR_out[0]~output_o\ : std_logic;
 SIGNAL \IR_out[1]~output_o\ : std_logic;
 SIGNAL \IR_out[2]~output_o\ : std_logic;
@@ -183,7 +183,7 @@ SIGNAL \PROC|Add0~9\ : std_logic;
 SIGNAL \PROC|Add0~11\ : std_logic;
 SIGNAL \PROC|Add0~12_combout\ : std_logic;
 SIGNAL \PROC|Selector1~0_combout\ : std_logic;
-SIGNAL \PROC|state~23_combout\ : std_logic;
+SIGNAL \PROC|state~26_combout\ : std_logic;
 SIGNAL \PROC|state.add2~q\ : std_logic;
 SIGNAL \PROC|RT[1]~0_combout\ : std_logic;
 SIGNAL \PROC|state.add1~q\ : std_logic;
@@ -195,7 +195,7 @@ SIGNAL \PROC|Add1~9\ : std_logic;
 SIGNAL \PROC|Add1~11_combout\ : std_logic;
 SIGNAL \PROC|Selector21~0_combout\ : std_logic;
 SIGNAL \PROC|Selector21~1_combout\ : std_logic;
-SIGNAL \PROC|state~20_combout\ : std_logic;
+SIGNAL \PROC|state~23_combout\ : std_logic;
 SIGNAL \PROC|state.sub1~q\ : std_logic;
 SIGNAL \PROC|AC[0]~0_combout\ : std_logic;
 SIGNAL \PROC|AC[0]~1_combout\ : std_logic;
@@ -259,27 +259,27 @@ SIGNAL \PROC|Add1~41_combout\ : std_logic;
 SIGNAL \PROC|Selector11~1_combout\ : std_logic;
 SIGNAL \PROC|IR[10]~feeder_combout\ : std_logic;
 SIGNAL \PROC|IR[0]~0_combout\ : std_logic;
-SIGNAL \PROC|state~17_combout\ : std_logic;
+SIGNAL \PROC|state~20_combout\ : std_logic;
 SIGNAL \PROC|state.nand1~q\ : std_logic;
 SIGNAL \PROC|Selector23~1_combout\ : std_logic;
 SIGNAL \PROC|Add1~8_combout\ : std_logic;
 SIGNAL \PROC|Selector22~0_combout\ : std_logic;
 SIGNAL \PROC|Selector22~1_combout\ : std_logic;
 SIGNAL \PROC|MEMadr~0_combout\ : std_logic;
-SIGNAL \PROC|MEMadr[7]~8_combout\ : std_logic;
-SIGNAL \PROC|MEMadr[6]~7_combout\ : std_logic;
-SIGNAL \PROC|MEMadr[5]~6_combout\ : std_logic;
+SIGNAL \PROC|Selector25~0_combout\ : std_logic;
+SIGNAL \PROC|Selector26~0_combout\ : std_logic;
+SIGNAL \PROC|Selector27~0_combout\ : std_logic;
 SIGNAL \PROC|Add0~8_combout\ : std_logic;
 SIGNAL \PROC|Selector3~0_combout\ : std_logic;
-SIGNAL \PROC|MEMadr[4]~5_combout\ : std_logic;
-SIGNAL \PROC|MEMadr[3]~4_combout\ : std_logic;
-SIGNAL \PROC|MEMadr[2]~3_combout\ : std_logic;
+SIGNAL \PROC|Selector28~0_combout\ : std_logic;
+SIGNAL \PROC|Selector29~0_combout\ : std_logic;
+SIGNAL \PROC|Selector30~0_combout\ : std_logic;
 SIGNAL \PROC|Selector6~0_combout\ : std_logic;
-SIGNAL \PROC|MEMadr[1]~2_combout\ : std_logic;
-SIGNAL \PROC|state~21_combout\ : std_logic;
+SIGNAL \PROC|Selector31~0_combout\ : std_logic;
+SIGNAL \PROC|state~24_combout\ : std_logic;
 SIGNAL \PROC|state.jump~q\ : std_logic;
 SIGNAL \PROC|Selector7~0_combout\ : std_logic;
-SIGNAL \PROC|MEMadr[0]~1_combout\ : std_logic;
+SIGNAL \PROC|Selector32~0_combout\ : std_logic;
 SIGNAL \PROC|IR[9]~feeder_combout\ : std_logic;
 SIGNAL \PROC|Mux0~0_combout\ : std_logic;
 SIGNAL \PROC|IR[13]~feeder_combout\ : std_logic;
@@ -289,8 +289,8 @@ SIGNAL \PROC|state.fetch1~q\ : std_logic;
 SIGNAL \PROC|state.decode~feeder_combout\ : std_logic;
 SIGNAL \PROC|state.decode~q\ : std_logic;
 SIGNAL \PROC|IR[11]~feeder_combout\ : std_logic;
-SIGNAL \PROC|state~18_combout\ : std_logic;
-SIGNAL \PROC|state~19_combout\ : std_logic;
+SIGNAL \PROC|state~21_combout\ : std_logic;
+SIGNAL \PROC|state~22_combout\ : std_logic;
 SIGNAL \PROC|state.load1~q\ : std_logic;
 SIGNAL \PROC|Add1~5_combout\ : std_logic;
 SIGNAL \PROC|Selector23~0_combout\ : std_logic;
@@ -322,8 +322,8 @@ ww_devpor <= devpor;
 \MEM|altsyncram_component|auto_generated|ram_block1a0_PORTADATAIN_bus\ <= (gnd & gnd & \PROC|AC\(15) & \PROC|AC\(14) & \PROC|AC\(13) & \PROC|AC\(12) & \PROC|AC\(11) & \PROC|AC\(10) & \PROC|AC\(9) & \PROC|AC\(8) & \PROC|AC\(7) & \PROC|AC\(6)
 & \PROC|AC\(5) & \PROC|AC\(4) & \PROC|AC\(3) & \PROC|AC\(2) & \PROC|AC\(1) & \PROC|AC\(0));
 
-\MEM|altsyncram_component|auto_generated|ram_block1a0_PORTAADDR_bus\ <= (\PROC|MEMadr[7]~8_combout\ & \PROC|MEMadr[6]~7_combout\ & \PROC|MEMadr[5]~6_combout\ & \PROC|MEMadr[4]~5_combout\ & \PROC|MEMadr[3]~4_combout\ & \PROC|MEMadr[2]~3_combout\ & 
-\PROC|MEMadr[1]~2_combout\ & \PROC|MEMadr[0]~1_combout\);
+\MEM|altsyncram_component|auto_generated|ram_block1a0_PORTAADDR_bus\ <= (\PROC|Selector25~0_combout\ & \PROC|Selector26~0_combout\ & \PROC|Selector27~0_combout\ & \PROC|Selector28~0_combout\ & \PROC|Selector29~0_combout\ & \PROC|Selector30~0_combout\ & 
+\PROC|Selector31~0_combout\ & \PROC|Selector32~0_combout\);
 
 \MEM|altsyncram_component|auto_generated|q_a\(0) <= \MEM|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus\(0);
 \MEM|altsyncram_component|auto_generated|q_a\(1) <= \MEM|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus\(1);
@@ -730,7 +730,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \reloj~inputclkctrl_outclk\,
-	d => \PROC|state~22_combout\,
+	d => \PROC|state~25_combout\,
 	clrn => \ALT_INV_reset~inputclkctrl_outclk\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
@@ -754,9 +754,9 @@ PORT MAP (
 	combout => \PROC|WideOr2~0_combout\);
 
 -- Location: LCCOMB_X50_Y1_N6
-\PROC|state~15\ : cycloneive_lcell_comb
+\PROC|state~18\ : cycloneive_lcell_comb
 -- Equation(s):
--- \PROC|state~15_combout\ = (!\PROC|IR\(14) & (!\PROC|IR\(15) & (!\PROC|IR\(12) & !\PROC|IR\(13))))
+-- \PROC|state~18_combout\ = (!\PROC|IR\(14) & (!\PROC|IR\(15) & (!\PROC|IR\(12) & !\PROC|IR\(13))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -768,12 +768,12 @@ PORT MAP (
 	datab => \PROC|IR\(15),
 	datac => \PROC|IR\(12),
 	datad => \PROC|IR\(13),
-	combout => \PROC|state~15_combout\);
+	combout => \PROC|state~18_combout\);
 
 -- Location: LCCOMB_X50_Y1_N24
-\PROC|state~16\ : cycloneive_lcell_comb
+\PROC|state~19\ : cycloneive_lcell_comb
 -- Equation(s):
--- \PROC|state~16_combout\ = (!\PROC|IR\(11) & (\PROC|state.decode~q\ & \PROC|state~15_combout\))
+-- \PROC|state~19_combout\ = (!\PROC|IR\(11) & (\PROC|state.decode~q\ & \PROC|state~18_combout\))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -783,13 +783,13 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \PROC|IR\(11),
 	datac => \PROC|state.decode~q\,
-	datad => \PROC|state~15_combout\,
-	combout => \PROC|state~16_combout\);
+	datad => \PROC|state~18_combout\,
+	combout => \PROC|state~19_combout\);
 
 -- Location: LCCOMB_X50_Y2_N26
-\PROC|state~22\ : cycloneive_lcell_comb
+\PROC|state~25\ : cycloneive_lcell_comb
 -- Equation(s):
--- \PROC|state~22_combout\ = (\PROC|IR\(8) & (!\PROC|IR\(9) & \PROC|state~18_combout\))
+-- \PROC|state~25_combout\ = (\PROC|IR\(8) & (!\PROC|IR\(9) & \PROC|state~21_combout\))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -799,8 +799,8 @@ GENERIC MAP (
 PORT MAP (
 	datab => \PROC|IR\(8),
 	datac => \PROC|IR\(9),
-	datad => \PROC|state~18_combout\,
-	combout => \PROC|state~22_combout\);
+	datad => \PROC|state~21_combout\,
+	combout => \PROC|state~25_combout\);
 
 -- Location: IOOBUF_X35_Y0_N23
 \IR_out[0]~output\ : cycloneive_io_obuf
@@ -1494,9 +1494,9 @@ PORT MAP (
 	q => \PROC|PC\(6));
 
 -- Location: LCCOMB_X50_Y2_N0
-\PROC|state~23\ : cycloneive_lcell_comb
+\PROC|state~26\ : cycloneive_lcell_comb
 -- Equation(s):
--- \PROC|state~23_combout\ = (!\PROC|IR\(8) & (!\PROC|IR\(9) & \PROC|state~18_combout\))
+-- \PROC|state~26_combout\ = (!\PROC|IR\(8) & (!\PROC|IR\(9) & \PROC|state~21_combout\))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1506,8 +1506,8 @@ GENERIC MAP (
 PORT MAP (
 	datab => \PROC|IR\(8),
 	datac => \PROC|IR\(9),
-	datad => \PROC|state~18_combout\,
-	combout => \PROC|state~23_combout\);
+	datad => \PROC|state~21_combout\,
+	combout => \PROC|state~26_combout\);
 
 -- Location: FF_X50_Y2_N1
 \PROC|state.add2\ : dffeas
@@ -1518,7 +1518,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \reloj~inputclkctrl_outclk\,
-	d => \PROC|state~23_combout\,
+	d => \PROC|state~26_combout\,
 	clrn => \ALT_INV_reset~inputclkctrl_outclk\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
@@ -1713,9 +1713,9 @@ PORT MAP (
 	combout => \PROC|Selector21~1_combout\);
 
 -- Location: LCCOMB_X54_Y1_N26
-\PROC|state~20\ : cycloneive_lcell_comb
+\PROC|state~23\ : cycloneive_lcell_comb
 -- Equation(s):
--- \PROC|state~20_combout\ = (\PROC|state~16_combout\ & (\PROC|IR\(10) & (!\PROC|IR\(9) & \PROC|IR\(8))))
+-- \PROC|state~23_combout\ = (\PROC|state~19_combout\ & (\PROC|IR\(10) & (!\PROC|IR\(9) & \PROC|IR\(8))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1723,11 +1723,11 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \PROC|state~16_combout\,
+	dataa => \PROC|state~19_combout\,
 	datab => \PROC|IR\(10),
 	datac => \PROC|IR\(9),
 	datad => \PROC|IR\(8),
-	combout => \PROC|state~20_combout\);
+	combout => \PROC|state~23_combout\);
 
 -- Location: FF_X54_Y1_N27
 \PROC|state.sub1\ : dffeas
@@ -1738,7 +1738,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \reloj~inputclkctrl_outclk\,
-	d => \PROC|state~20_combout\,
+	d => \PROC|state~23_combout\,
 	clrn => \ALT_INV_reset~inputclkctrl_outclk\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
@@ -2956,9 +2956,9 @@ PORT MAP (
 	q => \PROC|IR\(10));
 
 -- Location: LCCOMB_X54_Y1_N22
-\PROC|state~17\ : cycloneive_lcell_comb
+\PROC|state~20\ : cycloneive_lcell_comb
 -- Equation(s):
--- \PROC|state~17_combout\ = (\PROC|state~16_combout\ & (\PROC|IR\(10) & (!\PROC|IR\(9) & !\PROC|IR\(8))))
+-- \PROC|state~20_combout\ = (\PROC|state~19_combout\ & (\PROC|IR\(10) & (!\PROC|IR\(9) & !\PROC|IR\(8))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -2966,11 +2966,11 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \PROC|state~16_combout\,
+	dataa => \PROC|state~19_combout\,
 	datab => \PROC|IR\(10),
 	datac => \PROC|IR\(9),
 	datad => \PROC|IR\(8),
-	combout => \PROC|state~17_combout\);
+	combout => \PROC|state~20_combout\);
 
 -- Location: FF_X54_Y1_N23
 \PROC|state.nand1\ : dffeas
@@ -2981,7 +2981,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \reloj~inputclkctrl_outclk\,
-	d => \PROC|state~17_combout\,
+	d => \PROC|state~20_combout\,
 	clrn => \ALT_INV_reset~inputclkctrl_outclk\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
@@ -3087,9 +3087,9 @@ PORT MAP (
 	combout => \PROC|MEMadr~0_combout\);
 
 -- Location: LCCOMB_X50_Y2_N2
-\PROC|MEMadr[7]~8\ : cycloneive_lcell_comb
+\PROC|Selector25~0\ : cycloneive_lcell_comb
 -- Equation(s):
--- \PROC|MEMadr[7]~8_combout\ = (\PROC|MEMadr~0_combout\ & ((\PROC|IR\(7)))) # (!\PROC|MEMadr~0_combout\ & (\PROC|PC\(7)))
+-- \PROC|Selector25~0_combout\ = (\PROC|MEMadr~0_combout\ & ((\PROC|IR\(7)))) # (!\PROC|MEMadr~0_combout\ & (\PROC|PC\(7)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3100,7 +3100,7 @@ PORT MAP (
 	dataa => \PROC|PC\(7),
 	datac => \PROC|IR\(7),
 	datad => \PROC|MEMadr~0_combout\,
-	combout => \PROC|MEMadr[7]~8_combout\);
+	combout => \PROC|Selector25~0_combout\);
 
 -- Location: FF_X50_Y2_N21
 \PROC|IR[6]\ : dffeas
@@ -3119,9 +3119,9 @@ PORT MAP (
 	q => \PROC|IR\(6));
 
 -- Location: LCCOMB_X50_Y2_N20
-\PROC|MEMadr[6]~7\ : cycloneive_lcell_comb
+\PROC|Selector26~0\ : cycloneive_lcell_comb
 -- Equation(s):
--- \PROC|MEMadr[6]~7_combout\ = (\PROC|MEMadr~0_combout\ & ((\PROC|IR\(6)))) # (!\PROC|MEMadr~0_combout\ & (\PROC|PC\(6)))
+-- \PROC|Selector26~0_combout\ = (\PROC|MEMadr~0_combout\ & ((\PROC|IR\(6)))) # (!\PROC|MEMadr~0_combout\ & (\PROC|PC\(6)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3132,7 +3132,7 @@ PORT MAP (
 	datab => \PROC|PC\(6),
 	datac => \PROC|IR\(6),
 	datad => \PROC|MEMadr~0_combout\,
-	combout => \PROC|MEMadr[6]~7_combout\);
+	combout => \PROC|Selector26~0_combout\);
 
 -- Location: FF_X50_Y2_N31
 \PROC|IR[5]\ : dffeas
@@ -3151,9 +3151,9 @@ PORT MAP (
 	q => \PROC|IR\(5));
 
 -- Location: LCCOMB_X50_Y2_N30
-\PROC|MEMadr[5]~6\ : cycloneive_lcell_comb
+\PROC|Selector27~0\ : cycloneive_lcell_comb
 -- Equation(s):
--- \PROC|MEMadr[5]~6_combout\ = (\PROC|MEMadr~0_combout\ & ((\PROC|IR\(5)))) # (!\PROC|MEMadr~0_combout\ & (\PROC|PC\(5)))
+-- \PROC|Selector27~0_combout\ = (\PROC|MEMadr~0_combout\ & ((\PROC|IR\(5)))) # (!\PROC|MEMadr~0_combout\ & (\PROC|PC\(5)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3164,7 +3164,7 @@ PORT MAP (
 	dataa => \PROC|PC\(5),
 	datac => \PROC|IR\(5),
 	datad => \PROC|MEMadr~0_combout\,
-	combout => \PROC|MEMadr[5]~6_combout\);
+	combout => \PROC|Selector27~0_combout\);
 
 -- Location: FF_X50_Y2_N13
 \PROC|IR[4]\ : dffeas
@@ -3215,9 +3215,9 @@ PORT MAP (
 	q => \PROC|PC\(4));
 
 -- Location: LCCOMB_X50_Y2_N12
-\PROC|MEMadr[4]~5\ : cycloneive_lcell_comb
+\PROC|Selector28~0\ : cycloneive_lcell_comb
 -- Equation(s):
--- \PROC|MEMadr[4]~5_combout\ = (\PROC|MEMadr~0_combout\ & ((\PROC|IR\(4)))) # (!\PROC|MEMadr~0_combout\ & (\PROC|PC\(4)))
+-- \PROC|Selector28~0_combout\ = (\PROC|MEMadr~0_combout\ & ((\PROC|IR\(4)))) # (!\PROC|MEMadr~0_combout\ & (\PROC|PC\(4)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3228,7 +3228,7 @@ PORT MAP (
 	datab => \PROC|PC\(4),
 	datac => \PROC|IR\(4),
 	datad => \PROC|MEMadr~0_combout\,
-	combout => \PROC|MEMadr[4]~5_combout\);
+	combout => \PROC|Selector28~0_combout\);
 
 -- Location: FF_X50_Y2_N11
 \PROC|IR[3]\ : dffeas
@@ -3247,9 +3247,9 @@ PORT MAP (
 	q => \PROC|IR\(3));
 
 -- Location: LCCOMB_X50_Y2_N10
-\PROC|MEMadr[3]~4\ : cycloneive_lcell_comb
+\PROC|Selector29~0\ : cycloneive_lcell_comb
 -- Equation(s):
--- \PROC|MEMadr[3]~4_combout\ = (\PROC|MEMadr~0_combout\ & ((\PROC|IR\(3)))) # (!\PROC|MEMadr~0_combout\ & (\PROC|PC\(3)))
+-- \PROC|Selector29~0_combout\ = (\PROC|MEMadr~0_combout\ & ((\PROC|IR\(3)))) # (!\PROC|MEMadr~0_combout\ & (\PROC|PC\(3)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3260,7 +3260,7 @@ PORT MAP (
 	dataa => \PROC|PC\(3),
 	datac => \PROC|IR\(3),
 	datad => \PROC|MEMadr~0_combout\,
-	combout => \PROC|MEMadr[3]~4_combout\);
+	combout => \PROC|Selector29~0_combout\);
 
 -- Location: FF_X50_Y2_N17
 \PROC|IR[2]\ : dffeas
@@ -3279,9 +3279,9 @@ PORT MAP (
 	q => \PROC|IR\(2));
 
 -- Location: LCCOMB_X50_Y2_N16
-\PROC|MEMadr[2]~3\ : cycloneive_lcell_comb
+\PROC|Selector30~0\ : cycloneive_lcell_comb
 -- Equation(s):
--- \PROC|MEMadr[2]~3_combout\ = (\PROC|MEMadr~0_combout\ & ((\PROC|IR\(2)))) # (!\PROC|MEMadr~0_combout\ & (\PROC|PC\(2)))
+-- \PROC|Selector30~0_combout\ = (\PROC|MEMadr~0_combout\ & ((\PROC|IR\(2)))) # (!\PROC|MEMadr~0_combout\ & (\PROC|PC\(2)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3292,7 +3292,7 @@ PORT MAP (
 	dataa => \PROC|PC\(2),
 	datac => \PROC|IR\(2),
 	datad => \PROC|MEMadr~0_combout\,
-	combout => \PROC|MEMadr[2]~3_combout\);
+	combout => \PROC|Selector30~0_combout\);
 
 -- Location: FF_X50_Y2_N23
 \PROC|IR[1]\ : dffeas
@@ -3343,9 +3343,9 @@ PORT MAP (
 	q => \PROC|PC\(1));
 
 -- Location: LCCOMB_X50_Y2_N22
-\PROC|MEMadr[1]~2\ : cycloneive_lcell_comb
+\PROC|Selector31~0\ : cycloneive_lcell_comb
 -- Equation(s):
--- \PROC|MEMadr[1]~2_combout\ = (\PROC|MEMadr~0_combout\ & ((\PROC|IR\(1)))) # (!\PROC|MEMadr~0_combout\ & (\PROC|PC\(1)))
+-- \PROC|Selector31~0_combout\ = (\PROC|MEMadr~0_combout\ & ((\PROC|IR\(1)))) # (!\PROC|MEMadr~0_combout\ & (\PROC|PC\(1)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3356,7 +3356,7 @@ PORT MAP (
 	datab => \PROC|PC\(1),
 	datac => \PROC|IR\(1),
 	datad => \PROC|MEMadr~0_combout\,
-	combout => \PROC|MEMadr[1]~2_combout\);
+	combout => \PROC|Selector31~0_combout\);
 
 -- Location: FF_X50_Y2_N9
 \PROC|IR[8]\ : dffeas
@@ -3375,9 +3375,9 @@ PORT MAP (
 	q => \PROC|IR\(8));
 
 -- Location: LCCOMB_X50_Y2_N14
-\PROC|state~21\ : cycloneive_lcell_comb
+\PROC|state~24\ : cycloneive_lcell_comb
 -- Equation(s):
--- \PROC|state~21_combout\ = (\PROC|IR\(8) & (\PROC|IR\(9) & \PROC|state~18_combout\))
+-- \PROC|state~24_combout\ = (\PROC|IR\(8) & (\PROC|IR\(9) & \PROC|state~21_combout\))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3387,8 +3387,8 @@ GENERIC MAP (
 PORT MAP (
 	datab => \PROC|IR\(8),
 	datac => \PROC|IR\(9),
-	datad => \PROC|state~18_combout\,
-	combout => \PROC|state~21_combout\);
+	datad => \PROC|state~21_combout\,
+	combout => \PROC|state~24_combout\);
 
 -- Location: FF_X50_Y2_N15
 \PROC|state.jump\ : dffeas
@@ -3399,7 +3399,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \reloj~inputclkctrl_outclk\,
-	d => \PROC|state~21_combout\,
+	d => \PROC|state~24_combout\,
 	clrn => \ALT_INV_reset~inputclkctrl_outclk\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
@@ -3438,9 +3438,9 @@ PORT MAP (
 	q => \PROC|PC\(0));
 
 -- Location: LCCOMB_X50_Y2_N4
-\PROC|MEMadr[0]~1\ : cycloneive_lcell_comb
+\PROC|Selector32~0\ : cycloneive_lcell_comb
 -- Equation(s):
--- \PROC|MEMadr[0]~1_combout\ = (\PROC|MEMadr~0_combout\ & ((\PROC|IR\(0)))) # (!\PROC|MEMadr~0_combout\ & (\PROC|PC\(0)))
+-- \PROC|Selector32~0_combout\ = (\PROC|MEMadr~0_combout\ & ((\PROC|IR\(0)))) # (!\PROC|MEMadr~0_combout\ & (\PROC|PC\(0)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3451,7 +3451,7 @@ PORT MAP (
 	datab => \PROC|PC\(0),
 	datac => \PROC|IR\(0),
 	datad => \PROC|MEMadr~0_combout\,
-	combout => \PROC|MEMadr[0]~1_combout\);
+	combout => \PROC|Selector32~0_combout\);
 
 -- Location: LCCOMB_X50_Y1_N28
 \PROC|IR[9]~feeder\ : cycloneive_lcell_comb
@@ -3668,9 +3668,9 @@ PORT MAP (
 	q => \PROC|IR\(11));
 
 -- Location: LCCOMB_X50_Y1_N18
-\PROC|state~18\ : cycloneive_lcell_comb
+\PROC|state~21\ : cycloneive_lcell_comb
 -- Equation(s):
--- \PROC|state~18_combout\ = (\PROC|state~15_combout\ & (\PROC|state.decode~q\ & (!\PROC|IR\(10) & !\PROC|IR\(11))))
+-- \PROC|state~21_combout\ = (\PROC|state~18_combout\ & (\PROC|state.decode~q\ & (!\PROC|IR\(10) & !\PROC|IR\(11))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3678,16 +3678,16 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \PROC|state~15_combout\,
+	dataa => \PROC|state~18_combout\,
 	datab => \PROC|state.decode~q\,
 	datac => \PROC|IR\(10),
 	datad => \PROC|IR\(11),
-	combout => \PROC|state~18_combout\);
+	combout => \PROC|state~21_combout\);
 
 -- Location: LCCOMB_X54_Y1_N24
-\PROC|state~19\ : cycloneive_lcell_comb
+\PROC|state~22\ : cycloneive_lcell_comb
 -- Equation(s):
--- \PROC|state~19_combout\ = (\PROC|state~18_combout\ & (\PROC|IR\(9) & !\PROC|IR\(8)))
+-- \PROC|state~22_combout\ = (\PROC|state~21_combout\ & (\PROC|IR\(9) & !\PROC|IR\(8)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3695,10 +3695,10 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \PROC|state~18_combout\,
+	datab => \PROC|state~21_combout\,
 	datac => \PROC|IR\(9),
 	datad => \PROC|IR\(8),
-	combout => \PROC|state~19_combout\);
+	combout => \PROC|state~22_combout\);
 
 -- Location: FF_X54_Y1_N25
 \PROC|state.load1\ : dffeas
@@ -3709,7 +3709,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \reloj~inputclkctrl_outclk\,
-	d => \PROC|state~19_combout\,
+	d => \PROC|state~22_combout\,
 	clrn => \ALT_INV_reset~inputclkctrl_outclk\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,

@@ -10,7 +10,7 @@
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
 USE IEEE.STD_LOGIC_ARITH.ALL;
-USE IEEE.STD_LOGIC_UNSIGNED.ALL;
+USE IEEE.STD_LOGIC_SIGNED.ALL;
 
 ENTITY procesador_v1_1 IS
 PORT( clock : IN STD_LOGIC;
@@ -27,7 +27,8 @@ END procesador_v1_1;
 
 ARCHITECTURE rtl OF procesador_v1_1 IS
 	TYPE STATE_TYPE IS ( reset_pc, fetch1, decode, add1, load1,
-								store0, store1, jump, nand1, sub1, add2 );
+								store0, store1, jump, nand1, sub1, add2,
+								jneg, jpos, jzero	);
 	SIGNAL state: STATE_TYPE;
 	SIGNAL IR, AC: STD_LOGIC_VECTOR(15 DOWNTO 0 );
 	SIGNAL PC : STD_LOGIC_VECTOR( 7 DOWNTO 0 );
@@ -102,6 +103,21 @@ IF reset = '1' THEN
 		WHEN load1 =>
 			AC <= MEMq;
 			state <= fetch1;
+		WHEN jzero =>
+			IF AC = 0 THEN
+				PC <= IR( 7 DOWNTO 0 );
+			END IF;
+			state <= fetch1;
+		WHEN jpos =>
+			IF AC > 0 THEN
+				PC <= IR( 7 DOWNTO 0 );
+			END IF;
+			state <= fetch1;
+		WHEN jneg =>
+			IF AC < 0 THEN
+				PC <= IR( 7 DOWNTO 0 );
+			END IF;
+			state <= fetch1;
 		WHEN jump =>
 			PC <= IR( 7 DOWNTO 0 );
 			state <= fetch1;
@@ -125,6 +141,30 @@ IF reset = '1' THEN
 			MEMadr <= IR(7 downto 0);
 			MEMwe <= '1';
 			MEMdata <= AC;
+		WHEN jneg =>
+			IF AC < 0 THEN
+				MEMadr <= IR(7 downto 0);
+			ELSE
+				MEMadr <= PC;
+			END IF;
+			MEMwe <= '0';
+			MEMdata <= (others =>'-');
+		WHEN jpos =>
+			IF AC > 0 THEN
+				MEMadr <= IR(7 downto 0);
+			ELSE
+				MEMadr <= PC;
+			END IF;
+			MEMwe <= '0';
+			MEMdata <= (others =>'-');
+		WHEN jzero =>
+			IF AC = 0 THEN
+				MEMadr <= IR(7 downto 0);
+			ELSE
+				MEMadr <= PC;
+			END IF;
+			MEMwe <= '0';
+			MEMdata <= (others =>'-');
 		WHEN others =>
 			MEMadr <= IR(7 downto 0);
 			MEMwe <= '0';
