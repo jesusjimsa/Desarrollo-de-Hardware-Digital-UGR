@@ -26,8 +26,8 @@ PORT( clock : IN STD_LOGIC;
 END procesador_v1_1;
 
 ARCHITECTURE rtl OF procesador_v1_1 IS
-	TYPE STATE_TYPE IS ( reset_pc, fetch0, fetch1, decode, add0, add1, load0, load1, 
-								store0, store1, jump);
+	TYPE STATE_TYPE IS ( reset_pc, fetch1, decode, add1, load1, 
+								store0, store1, jump, nand1, sub1);
 	SIGNAL state: STATE_TYPE;
 	SIGNAL IR, AC: STD_LOGIC_VECTOR(15 DOWNTO 0 );
 	SIGNAL PC : STD_LOGIC_VECTOR( 7 DOWNTO 0 );
@@ -54,9 +54,9 @@ IF reset = '1' THEN
 		WHEN reset_pc =>
 			PC	<= "00000000";
 			AC <= "0000000000000000";
-			state <= fetch0;
-		WHEN fetch0 =>		
-			state <= fetch1;		
+			state <= fetch1;
+--		WHEN fetch0 =>		
+--			state <= fetch1;		
 		WHEN fetch1 =>
 			IR <= MEMq;
 			PC <= PC + 1;
@@ -64,46 +64,56 @@ IF reset = '1' THEN
 		WHEN decode =>
 			CASE IR( 15 DOWNTO 8 ) IS
 				WHEN "00000000" =>
-					state <= add0;
+					state <= add1;
 				WHEN "00000001" =>
 					state <= store0;
 				WHEN "00000010" =>
-					state <= load0;
+					state <= load1;
 				WHEN "00000011" =>
 					state <= jump;
+				WHEN "00000100" =>
+					state <= nand1;
+				WHEN "00000101" =>
+					state <= sub1;
 				WHEN OTHERS =>
-					state <= fetch0;
+					state <= fetch1;
 			END CASE;
 --		WHEN add0 => 
 --			state <= add1;
 		WHEN add1 =>
 			AC <= AC + MEMq;
-			state <= fetch0;	
+			state <= fetch1;
+		WHEN sub1 =>
+			AC <= AC - MEMq;
+			state <= fetch1;
 		WHEN store0 =>
 			state <= store1;
 		WHEN store1 =>
-			state <= fetch0;			
+			state <= fetch1;
+		WHEN nand1 =>
+			AC <= AC nand MEMq;
+			state <= fetch1;
 --		WHEN load0 =>
---			state <= load1;	
+--			state <= load1;
 		WHEN load1 =>
 			AC <= MEMq;
-			state <= fetch0;			
+			state <= fetch1;
 		WHEN jump =>
 			PC <= IR( 7 DOWNTO 0 );
-			state <= fetch0;			
+			state <= fetch1;
 		WHEN OTHERS =>
-			state <= fetch0;	
+			state <= fetch1;
 	 END CASE;
 	END IF;
 	
 -- Asignaciones a BUSES de entrada a MEMORIA (Direcciones, Datos y control de escritura)
  
 	CASE state IS
-		WHEN fetch0 =>
+		WHEN fetch1 =>
 			MEMadr <= PC;
 			MEMwe <= '0';
 			MEMdata <= (others =>'-');
-		WHEN add0 | load0 =>
+		WHEN add1 | load1 | sub1 | nand1 =>
 			MEMadr <= IR(7 downto 0);
 			MEMwe <= '0';
 			MEMdata <= (others =>'-');
