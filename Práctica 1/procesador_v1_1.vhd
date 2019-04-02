@@ -26,8 +26,8 @@ PORT( clock : IN STD_LOGIC;
 END procesador_v1_1;
 
 ARCHITECTURE rtl OF procesador_v1_1 IS
-	TYPE STATE_TYPE IS ( reset_pc, fetch1, decode, add1, load1,
-								store0, store1, jump, nand1, sub1);
+	TYPE STATE_TYPE IS (reset_pc, fetch1, decode, add1, load1,
+						store0, store1, jump, nand1, sub1);
 	SIGNAL state: STATE_TYPE;
 	SIGNAL IR, AC: STD_LOGIC_VECTOR(15 DOWNTO 0 );
 	SIGNAL PC : STD_LOGIC_VECTOR( 7 DOWNTO 0 );
