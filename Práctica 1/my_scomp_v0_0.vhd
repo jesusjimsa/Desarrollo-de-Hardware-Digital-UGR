@@ -19,13 +19,13 @@ ARCHITECTURE rtl OF my_scomp_v0_0 IS
 	SIGNAL MEMadr : STD_LOGIC_VECTOR( 7 DOWNTO 0 );
 	SIGNAL MEMwe : STD_LOGIC;
 
-	-- Declaracion del IP core ram_256_x_16 
+	-- Declaracion del IP core ram_256_x_16
 	--
-	-- 	Memoria RAM de un puerto, 256 palabras, 16 bits por palabra, 
-	-- 	Entradas de datos, direcciones y control de memoria REGISTRADAS, 
-	-- 	Salida NO REGISTRADA 
-	-- 	Fichero de inicializacion: programa.mif	
-	
+	-- 	Memoria RAM de un puerto, 256 palabras, 16 bits por palabra,
+	-- 	Entradas de datos, direcciones y control de memoria REGISTRADAS,
+	-- 	Salida NO REGISTRADA
+	-- 	Fichero de inicializacion: programa.mif
+
 	component IP_RAM_256_x_16
 		PORT
 		(
@@ -36,10 +36,10 @@ ARCHITECTURE rtl OF my_scomp_v0_0 IS
 			q		: OUT STD_LOGIC_VECTOR (15 DOWNTO 0)
 		);
 	end component;
-	
-	-- Declaracion del componente con versión inicial del procesador 
+
+	-- Declaracion del componente con versión inicial del procesador
 	--
-		
+
 	COMPONENT procesador_v1_1 is
 	PORT( clock : IN STD_LOGIC;
 		reset : IN STD_LOGIC;
@@ -52,13 +52,13 @@ ARCHITECTURE rtl OF my_scomp_v0_0 IS
 		MEMadr : out std_logic_vector(7 downto 0)
 	);
 	END COMPONENT;
-	
-	
+
+
 	BEGIN
-	
+
 	-- Instancia denominada MEM del IP core ram_256_x_16
 	--
-	
+
 	MEM: IP_RAM_256_x_16 PORT MAP
 	(
 		address => MEMadr,
@@ -69,10 +69,10 @@ ARCHITECTURE rtl OF my_scomp_v0_0 IS
 	);
 
 	-- Instancia denominada PROC de la version inicial del procesador
-	--	
-	
+	--
+
 	PROC: procesador_v1_1 PORT MAP (
-		clock => reloj, 
+		clock => reloj,
 		reset => reset,
 		AC_out => AC_out,
 		IR_out => IR_out,
@@ -84,5 +84,5 @@ ARCHITECTURE rtl OF my_scomp_v0_0 IS
 	);
 
 
-	
+
 END rtl;

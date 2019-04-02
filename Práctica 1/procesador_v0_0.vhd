@@ -1,9 +1,9 @@
 
 
--- Descripción de una procesador que ejecuta cuatro instrucciones. 
+-- Descripción de una procesador que ejecuta cuatro instrucciones.
 -- Basado en ejemplo de Hamblen, J.O., Hall T.S., Furman, M.D.:
 -- Rapid Prototyping of Digital Systems : SOPC Edition, Springer 2008.
--- (Capítulo 9) 
+-- (Capítulo 9)
 
 
 
@@ -26,17 +26,17 @@ PORT( clock : IN STD_LOGIC;
 END procesador_v0_0;
 
 ARCHITECTURE rtl OF procesador_v0_0 IS
-	TYPE STATE_TYPE IS ( reset_pc, fetch0, fetch1, decode, add0, add1, load0, load1, 
+	TYPE STATE_TYPE IS ( reset_pc, fetch0, fetch1, decode, add0, add1, load0, load1,
 								store0, store1, jump);
 	SIGNAL state: STATE_TYPE;
 	SIGNAL IR, AC: STD_LOGIC_VECTOR(15 DOWNTO 0 );
 	SIGNAL PC : STD_LOGIC_VECTOR( 7 DOWNTO 0 );
-	
+
 	BEGIN
-	
-	
+
+
 	-- Asignaciones a puertos de salida
-	--	
+	--
 	AC_out <= AC;
 	IR_out <= IR;
 	PC_out <= PC;
@@ -50,17 +50,17 @@ BEGIN
 IF reset = '1' THEN
 	state <= reset_pc;
 	ELSIF clock'EVENT AND clock = '1' THEN
-	 CASE state IS   
+	 CASE state IS
 		WHEN reset_pc =>
 			PC	<= "00000000";
 			AC <= "0000000000000000";
 			state <= fetch0;
-		WHEN fetch0 =>		
-			state <= fetch1;		
+		WHEN fetch0 =>
+			state <= fetch1;
 		WHEN fetch1 =>
 			IR <= MEMq;
 			PC <= PC + 1;
-			state <= decode;	
+			state <= decode;
 		WHEN decode =>
 			CASE IR( 15 DOWNTO 8 ) IS
 				WHEN "00000000" =>
@@ -74,30 +74,30 @@ IF reset = '1' THEN
 				WHEN OTHERS =>
 					state <= fetch0;
 			END CASE;
-		WHEN add0 => 
+		WHEN add0 =>
 			state <= add1;
 		WHEN add1 =>
 			AC <= AC + MEMq;
-			state <= fetch0;	
+			state <= fetch0;
 		WHEN store0 =>
 			state <= store1;
 		WHEN store1 =>
-			state <= fetch0;			
+			state <= fetch0;
 		WHEN load0 =>
-			state <= load1;	
+			state <= load1;
 		WHEN load1 =>
 			AC <= MEMq;
-			state <= fetch0;			
+			state <= fetch0;
 		WHEN jump =>
 			PC <= IR( 7 DOWNTO 0 );
-			state <= fetch0;			
+			state <= fetch0;
 		WHEN OTHERS =>
-			state <= fetch0;	
+			state <= fetch0;
 	 END CASE;
 	END IF;
-	
+
 -- Asignaciones a BUSES de entrada a MEMORIA (Direcciones, Datos y control de escritura)
- 
+
 	CASE state IS
 		WHEN fetch0 =>
 			MEMadr <= PC;
@@ -107,7 +107,7 @@ IF reset = '1' THEN
 			MEMadr <= IR(7 downto 0);
 			MEMwe <= '0';
 			MEMdata <= (others =>'-');
-		WHEN store0 => 
+		WHEN store0 =>
 			MEMadr <= IR(7 downto 0);
 			MEMwe <= '1';
 			MEMdata <= AC;
@@ -116,7 +116,7 @@ IF reset = '1' THEN
 			MEMwe <= '0';
 			MEMdata <= (others =>'-');
 	end case;
-	
+
 END PROCESS;
 
 
