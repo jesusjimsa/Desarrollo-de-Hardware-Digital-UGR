@@ -26,11 +26,12 @@ PORT( clock : IN STD_LOGIC;
 END procesador_v1_1;
 
 ARCHITECTURE rtl OF procesador_v1_1 IS
-	TYPE STATE_TYPE IS (reset_pc, fetch1, decode, add1, load1,
-						store0, store1, jump, nand1, sub1);
+	TYPE STATE_TYPE IS ( reset_pc, fetch1, decode, add1, load1,
+								store0, store1, jump, nand1, sub1, add2 );
 	SIGNAL state: STATE_TYPE;
 	SIGNAL IR, AC: STD_LOGIC_VECTOR(15 DOWNTO 0 );
 	SIGNAL PC : STD_LOGIC_VECTOR( 7 DOWNTO 0 );
+	SIGNAL RT : STD_LOGIC_VECTOR(15 downto 0);
 
 	BEGIN
 
@@ -64,7 +65,7 @@ IF reset = '1' THEN
 		WHEN decode =>
 			CASE IR( 15 DOWNTO 8 ) IS
 				WHEN "00000000" =>
-					state <= add1;
+					state <= add2;
 				WHEN "00000001" =>
 					state <= store0;
 				WHEN "00000010" =>
@@ -81,8 +82,11 @@ IF reset = '1' THEN
 --		WHEN add0 =>
 --			state <= add1;
 		WHEN add1 =>
-			AC <= AC + MEMq;
+			AC <= AC + RT;
 			state <= fetch1;
+		WHEN add2 =>
+			RT <= MEMq;
+			state <= add1;
 		WHEN sub1 =>
 			AC <= AC - MEMq;
 			state <= fetch1;
@@ -113,8 +117,8 @@ IF reset = '1' THEN
 			MEMadr <= PC;
 			MEMwe <= '0';
 			MEMdata <= (others =>'-');
-		WHEN add1 | load1 | sub1 | nand1 =>
-			MEMadr <= IR(7 downto 0);
+		WHEN add1 | add2 | load1 | sub1 | nand1 | store1 =>
+			MEMadr <= PC;
 			MEMwe <= '0';
 			MEMdata <= (others =>'-');
 		WHEN store0 =>

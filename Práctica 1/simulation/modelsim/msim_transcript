@@ -37,8 +37,8 @@
 # -- Compiling architecture rtl of procesador_v1_1
 # 
 #  
-vsim +altera -do my_scomp_v0_0_run_msim_rtl_vhdl.do -l msim_transcript -gui work.my_scomp_v0_0
-# vsim +altera -do my_scomp_v0_0_run_msim_rtl_vhdl.do -l msim_transcript -gui work.my_scomp_v0_0 
+vsim work.my_scomp_v0_0
+# vsim work.my_scomp_v0_0 
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -50,45 +50,17 @@ vsim +altera -do my_scomp_v0_0_run_msim_rtl_vhdl.do -l msim_transcript -gui work
 # Loading altera_mf.altera_device_families(body)
 # Loading altera_mf.altsyncram(translated)
 # Loading work.procesador_v1_1(rtl)
-# do my_scomp_v0_0_run_msim_rtl_vhdl.do 
-# if {[file exists rtl_work]} {
-# 	vdel -lib rtl_work -all
-# }
-# vlib rtl_work
-# vmap work rtl_work
-# Modifying modelsim.ini
-# 
-# vcom -93 -work work {C:/p1/IP_RAM_256_x_16.vhd}
-# Model Technology ModelSim ALTERA vcom 10.0d Compiler 2012.01 Jan 18 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity IP_RAM_256_x_16
-# -- Compiling architecture SYN of ip_ram_256_x_16
-# vcom -93 -work work {C:/p1/my_scomp_v0_0.vhd}
-# Model Technology ModelSim ALTERA vcom 10.0d Compiler 2012.01 Jan 18 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package std_logic_arith
-# -- Loading package STD_LOGIC_UNSIGNED
-# -- Compiling entity my_scomp_v0_0
-# -- Compiling architecture rtl of my_scomp_v0_0
-# vcom -93 -work work {C:/p1/procesador_v1_1.vhd}
-# Model Technology ModelSim ALTERA vcom 10.0d Compiler 2012.01 Jan 18 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package std_logic_arith
-# -- Loading package STD_LOGIC_UNSIGNED
-# -- Compiling entity procesador_v1_1
-# -- Compiling architecture rtl of procesador_v1_1
-# 
 wave create -driver freeze -pattern constant -value 0 -starttime 0ns -endtime 10ns sim:/my_scomp_v0_0/reset
 wave modify -driver freeze -pattern constant -value 1 -starttime 0ps -endtime 50ps Edit:/my_scomp_v0_0/reset
-wave create -driver freeze -pattern clock -initialvalue 0 -period 100ps -dutycycle 50 -starttime 0ps -endtime 10ps sim:/my_scomp_v0_0/reloj
 wave create -driver freeze -pattern clock -initialvalue 0 -period 100ps -dutycycle 50 -starttime 0ns -endtime 10ns sim:/my_scomp_v0_0/reloj
 add wave  \
+sim:/my_scomp_v0_0/PROC/AC_out \
+sim:/my_scomp_v0_0/PROC/IR_out \
+sim:/my_scomp_v0_0/PROC/PC_out \
+sim:/my_scomp_v0_0/PROC/MEMq \
+sim:/my_scomp_v0_0/PROC/MEMdata \
+sim:/my_scomp_v0_0/PROC/MEMwe \
+sim:/my_scomp_v0_0/PROC/MEMadr \
 sim:/my_scomp_v0_0/PROC/state
 run -all
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
@@ -103,3 +75,5 @@ run -all
 #    Time: 50 ps  Iteration: 1  Instance: /my_scomp_v0_0/MEM/altsyncram_component
 # ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
 #    Time: 50 ps  Iteration: 1  Instance: /my_scomp_v0_0/MEM/altsyncram_component
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/p1/simulation/modelsim/wave.do
+wave editwrite -file C:/p1/simulation/modelsim/wave.do -append
