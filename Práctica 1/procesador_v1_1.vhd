@@ -77,6 +77,12 @@ IF reset = '1' THEN
 					state <= nand1;
 				WHEN "00000101" =>
 					state <= sub1;
+				WHEN "00000110" =>
+					state <= jzero;
+				WHEN "00000111" =>
+					state <= jpos;
+				WHEN "00001000" =>
+					state <= jneg;
 				WHEN OTHERS =>
 					state <= fetch1;
 			END CASE;
