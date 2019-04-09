@@ -21,14 +21,16 @@ PORT( clock : IN STD_LOGIC;
 		MEMq : in std_logic_vector(15 downto 0);
 		MEMdata: out std_logic_vector(15 downto 0);
 		MEMwe : out std_logic;
-		MEMadr : out std_logic_vector(7 downto 0)
+		MEMadr : out std_logic_vector(7 downto 0);
+		IO_input : in std_logic_vector(7 downto 0);
+		IO_output : out std_logic_vector(7 downto 0)
 		);
 END procesador_v1_1;
 
 ARCHITECTURE rtl OF procesador_v1_1 IS
 	TYPE STATE_TYPE IS ( reset_pc, fetch1, decode, add1, load1,
 								store0, store1, jump, nand1, sub1, add2,
-								jneg, jpos, jzero	);
+								jneg, jpos, jzero, shl1, shr1, in1, out1	);
 	SIGNAL state: STATE_TYPE;
 	SIGNAL IR, AC: STD_LOGIC_VECTOR(15 DOWNTO 0 );
 	SIGNAL PC : STD_LOGIC_VECTOR( 7 DOWNTO 0 );
@@ -57,12 +59,14 @@ IF reset = '1' THEN
 			PC	<= "00000000";
 			AC <= "0000000000000000";
 			state <= fetch1;
---		WHEN fetch0 =>
---			state <= fetch1;
+		---------------------------
+		---------------------------
 		WHEN fetch1 =>
 			IR <= MEMq;
 			PC <= PC + 1;
 			state <= decode;
+		---------------------------
+		---------------------------
 		WHEN decode =>
 			CASE IR( 15 DOWNTO 8 ) IS
 				WHEN "00000000" =>
@@ -83,11 +87,19 @@ IF reset = '1' THEN
 					state <= jpos;
 				WHEN "00001000" =>
 					state <= jneg;
+				WHEN "00001001" =>
+					state <= shl1;
+				WHEN "00001010" =>
+					state <= shr1;
+				WHEN "00001011" =>
+					state <= in1;
+				WHEN "00001100" =>
+					state <= out1;
 				WHEN OTHERS =>
 					state <= fetch1;
 			END CASE;
---		WHEN add0 =>
---			state <= add1;
+		---------------------------
+		---------------------------
 		WHEN add1 =>
 			AC <= AC + RT;
 			state <= fetch1;
@@ -97,18 +109,32 @@ IF reset = '1' THEN
 		WHEN sub1 =>
 			AC <= AC - MEMq;
 			state <= fetch1;
+		---------------------------
+		---------------------------
 		WHEN store0 =>
 			state <= store1;
 		WHEN store1 =>
 			state <= fetch1;
+		---------------------------
+		---------------------------
 		WHEN nand1 =>
 			AC <= AC nand MEMq;
 			state <= fetch1;
---		WHEN load0 =>
---			state <= load1;
+		---------------------------
+		---------------------------
 		WHEN load1 =>
 			AC <= MEMq;
 			state <= fetch1;
+		---------------------------
+		---------------------------
+		WHEN shr1 =>
+			AC <= SHR(AC, IR(7 downto 0));
+			state <= fetch1;
+		WHEN shl1 =>
+			AC <= SHL(AC, IR(7 downto 0));
+			state <= fetch1;
+		---------------------------
+		---------------------------
 		WHEN jzero =>
 			IF AC = 0 THEN
 				PC <= IR( 7 DOWNTO 0 );
@@ -127,6 +153,24 @@ IF reset = '1' THEN
 		WHEN jump =>
 			PC <= IR( 7 DOWNTO 0 );
 			state <= fetch1;
+		---------------------------
+		---------------------------
+		WHEN in1 =>
+			IF IR(0) = '0' THEN
+				AC(7 downto 0) <= IO_input(7 downto 0);
+			ELSE
+				AC(15 downto 8) <= IO_input(7 downto 0);
+			END IF;
+			state <= fetch1;
+		WHEN out1 =>
+			IF IR(0) = '0' THEN
+				AC(7 downto 0) <= IO_output(7 downto 0);
+			ELSE
+				AC(7 downto 0) <= IO_output(15 downto 8);
+			END IF;
+			state <= fetch1;
+		---------------------------
+		---------------------------
 		WHEN OTHERS =>
 			state <= fetch1;
 	 END CASE;
@@ -139,14 +183,20 @@ IF reset = '1' THEN
 			MEMadr <= PC;
 			MEMwe <= '0';
 			MEMdata <= (others =>'-');
-		WHEN add1 | add2 | load1 | sub1 | nand1 | store1 =>
+		---------------------------
+		---------------------------
+		WHEN add1 | add2 | load1 | sub1 | nand1 | store1 | shr1 | shl1 | in1 | out1 =>
 			MEMadr <= PC;
 			MEMwe <= '0';
 			MEMdata <= (others =>'-');
+		---------------------------
+		---------------------------
 		WHEN store0 =>
 			MEMadr <= IR(7 downto 0);
 			MEMwe <= '1';
 			MEMdata <= AC;
+		---------------------------
+		---------------------------
 		WHEN jneg =>
 			IF AC < 0 THEN
 				MEMadr <= IR(7 downto 0);
@@ -171,6 +221,8 @@ IF reset = '1' THEN
 			END IF;
 			MEMwe <= '0';
 			MEMdata <= (others =>'-');
+		---------------------------
+		---------------------------
 		WHEN others =>
 			MEMadr <= IR(7 downto 0);
 			MEMwe <= '0';

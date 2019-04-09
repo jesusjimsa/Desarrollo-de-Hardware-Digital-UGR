@@ -41,7 +41,8 @@ ARCHITECTURE rtl OF my_scomp_v0_0 IS
 	--
 
 	COMPONENT procesador_v1_1 is
-	PORT( clock : IN STD_LOGIC;
+	PORT(
+		clock : IN STD_LOGIC;
 		reset : IN STD_LOGIC;
 		AC_out : out std_logic_vector(15 downto 0);
 		IR_out : out std_logic_vector(15 downto 0);
@@ -49,7 +50,9 @@ ARCHITECTURE rtl OF my_scomp_v0_0 IS
 		MEMq : in std_logic_vector(15 downto 0);
 		MEMdata: out std_logic_vector(15 downto 0);
 		MEMwe : out std_logic;
-		MEMadr : out std_logic_vector(7 downto 0)
+		MEMadr : out std_logic_vector(7 downto 0);
+		IO_input : in std_logic_vector(7 downto 0);
+		IO_output : out std_logic_vector(7 downto 0)
 	);
 	END COMPONENT;
 
@@ -80,7 +83,9 @@ ARCHITECTURE rtl OF my_scomp_v0_0 IS
 		MEMq => MEMq,
 		MEMdata => MEMdata,
 		MEMwe => MEMwe,
-		MEMadr => MEMadr
+		MEMadr => MEMadr,
+		IO_input => IO_input,
+		IO_output => IO_output
 	);
 
 

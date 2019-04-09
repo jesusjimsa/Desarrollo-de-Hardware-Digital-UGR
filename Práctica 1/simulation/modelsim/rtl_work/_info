@@ -4,7 +4,7 @@ K3
 cModel Technology
 Z0 dC:\p1\simulation\modelsim
 Eip_ram_256_x_16
-Z1 w1554718203
+Z1 w1554821327
 Z2 DPx3 std 6 textio 0 22 G^o2zK;Vh4eVdKTVo98653
 Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
 Z4 dC:\p1\simulation\modelsim
@@ -15,7 +15,7 @@ L42
 V7L`TJSnZ4HfY3A]7IJgg81
 Z7 OV;C;10.0d;49
 31
-Z8 !s108 1554719587.656000
+Z8 !s108 1554826028.078000
 Z9 !s90 -reportprogress|300|-93|-work|work|C:/p1/IP_RAM_256_x_16.vhd|
 Z10 !s107 C:/p1/IP_RAM_256_x_16.vhd|
 Z11 o-93 -work work -O0
@@ -37,28 +37,28 @@ R11
 R12
 !s100 feMhf2W@9jOS5W<e6PzX;0
 Emy_scomp_v0_0
-R1
-Z13 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
-Z14 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
+Z13 w1554821328
+Z14 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
+Z15 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
 R2
 R3
 R4
-Z15 8C:/p1/my_scomp_v0_0.vhd
-Z16 FC:/p1/my_scomp_v0_0.vhd
+Z16 8C:/p1/my_scomp_v0_0.vhd
+Z17 FC:/p1/my_scomp_v0_0.vhd
 l0
 L7
 VAj9kjkMB3B5g4:G>b2L=z0
 R7
 31
-Z17 !s108 1554719587.796000
-Z18 !s90 -reportprogress|300|-93|-work|work|C:/p1/my_scomp_v0_0.vhd|
-Z19 !s107 C:/p1/my_scomp_v0_0.vhd|
+Z18 !s108 1554826028.171000
+Z19 !s90 -reportprogress|300|-93|-work|work|C:/p1/my_scomp_v0_0.vhd|
+Z20 !s107 C:/p1/my_scomp_v0_0.vhd|
 R11
 R12
 !s100 EZmH?idY6XojRJEJ]nd5N3
 Artl
-R13
 R14
+R15
 R2
 R3
 DEx4 work 13 my_scomp_v0_0 0 22 Aj9kjkMB3B5g4:G>b2L=z0
@@ -67,46 +67,46 @@ L16
 V_ANgm_<063LX2731R@K2M3
 R7
 31
-R17
 R18
 R19
+R20
 R11
 R12
 !s100 oJ0oXAf?j7VaVoAnKM92T0
 Eprocesador_v1_1
-Z20 w1554719261
-Z21 DPx4 ieee 16 std_logic_signed 0 22 E>OLoMaBGQ?hbGgOoNXM^1
-R14
+Z21 w1554823867
+Z22 DPx4 ieee 16 std_logic_signed 0 22 E>OLoMaBGQ?hbGgOoNXM^1
+R15
 R2
 R3
 R4
-Z22 8C:/p1/procesador_v1_1.vhd
-Z23 FC:/p1/procesador_v1_1.vhd
+Z23 8C:/p1/procesador_v1_1.vhd
+Z24 FC:/p1/procesador_v1_1.vhd
 l0
 L15
 V9jO4VJY[4I5:9LI8<c>S>0
 !s100 nhjXaNQ?h6I5kz4manL?>2
 R7
 31
-Z24 !s108 1554719588.000000
-Z25 !s90 -reportprogress|300|-93|-work|work|C:/p1/procesador_v1_1.vhd|
-Z26 !s107 C:/p1/procesador_v1_1.vhd|
+Z25 !s108 1554826028.265000
+Z26 !s90 -reportprogress|300|-93|-work|work|C:/p1/procesador_v1_1.vhd|
+Z27 !s107 C:/p1/procesador_v1_1.vhd|
 R11
 R12
 Artl
-R21
-R14
+R22
+R15
 R2
 R3
 DEx4 work 15 procesador_v1_1 0 22 9jO4VJY[4I5:9LI8<c>S>0
 l37
 L28
-VM3>llk]nHRJ@>5jn37d[M2
-!s100 fdXPR4Ul9a1^oY9aJMl[93
+Vg2dSZTHWS6J[ESgTGV^]V2
+!s100 H^LJfIinX9PzN5Y80OAcO0
 R7
 31
-R24
 R25
 R26
+R27
 R11
 R12
