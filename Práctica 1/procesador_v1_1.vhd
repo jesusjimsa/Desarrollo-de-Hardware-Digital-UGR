@@ -13,8 +13,8 @@ USE IEEE.STD_LOGIC_ARITH.ALL;
 USE IEEE.STD_LOGIC_SIGNED.ALL;
 
 ENTITY procesador_v1_1 IS
-PORT( clock : IN STD_LOGIC;
-		reset : IN STD_LOGIC;
+PORT( clock : in std_logic;
+		reset : in std_logic;
 		AC_out : out std_logic_vector(15 downto 0);
 		IR_out : out std_logic_vector(15 downto 0);
 		PC_out : out std_logic_vector(7 downto 0);
@@ -164,9 +164,11 @@ IF reset = '1' THEN
 			state <= fetch1;
 		WHEN out1 =>
 			IF IR(0) = '0' THEN
-				AC(7 downto 0) <= IO_output(7 downto 0);
+--				AC(7 downto 0) <= IO_output(7 downto 0);
+				IO_output(7 downto 0) <= AC(7 downto 0);
 			ELSE
-				AC(7 downto 0) <= IO_output(15 downto 8);
+--				AC(7 downto 0) <= IO_output(15 downto 8);
+				IO_output(7 downto 0) <= AC(15 downto 8);
 			END IF;
 			state <= fetch1;
 		---------------------------

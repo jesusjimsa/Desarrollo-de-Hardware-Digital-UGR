@@ -5,7 +5,8 @@ USE IEEE.STD_LOGIC_ARITH.ALL;
 USE IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 ENTITY my_scomp_v0_0 IS
-PORT( reloj : IN STD_LOGIC;
+PORT(
+		reloj : IN STD_LOGIC;
 		reset : IN STD_LOGIC;
 		IR_out: out std_logic_vector(15 downto 0);
 		AC_out: out std_logic_vector(15 downto 0);
@@ -18,6 +19,8 @@ ARCHITECTURE rtl OF my_scomp_v0_0 IS
 	SIGNAL MEMq, MEMdata: STD_LOGIC_VECTOR(15 DOWNTO 0 );
 	SIGNAL MEMadr : STD_LOGIC_VECTOR( 7 DOWNTO 0 );
 	SIGNAL MEMwe : STD_LOGIC;
+	SIGNAL IO_input : STD_LOGIC_VECTOR(7 DOWNTO 0);
+	SIGNAL IO_output :  STD_LOGIC_VECTOR(7 DOWNTO 0);
 
 	-- Declaracion del IP core ram_256_x_16
 	--
@@ -27,8 +30,7 @@ ARCHITECTURE rtl OF my_scomp_v0_0 IS
 	-- 	Fichero de inicializacion: programa.mif
 
 	component IP_RAM_256_x_16
-		PORT
-		(
+		PORT(
 			address		: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
 			clock		: IN STD_LOGIC  := '1';
 			data		: IN STD_LOGIC_VECTOR (15 DOWNTO 0);
@@ -62,8 +64,7 @@ ARCHITECTURE rtl OF my_scomp_v0_0 IS
 	-- Instancia denominada MEM del IP core ram_256_x_16
 	--
 
-	MEM: IP_RAM_256_x_16 PORT MAP
-	(
+	MEM: IP_RAM_256_x_16 PORT MAP(
 		address => MEMadr,
 		clock => reloj,
 		data => MEMdata,

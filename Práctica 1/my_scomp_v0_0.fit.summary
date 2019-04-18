@@ -1,14 +1,14 @@
-Fitter Status : Successful - Tue Apr 09 17:02:56 2019
+Fitter Status : Successful - Thu Apr 18 17:16:50 2019
 Quartus II 32-bit Version : 12.0 Build 263 08/02/2012 SP 2 SJ Web Edition
 Revision Name : my_scomp_v0_0
 Top-level Entity Name : my_scomp_v0_0
 Family : Cyclone IV E
 Device : EP4CE115F29C7
 Timing Models : Final
-Total logic elements : 295 / 114,480 ( < 1 % )
-    Total combinational functions : 287 / 114,480 ( < 1 % )
-    Dedicated logic registers : 71 / 114,480 ( < 1 % )
-Total registers : 71
+Total logic elements : 294 / 114,480 ( < 1 % )
+    Total combinational functions : 288 / 114,480 ( < 1 % )
+    Dedicated logic registers : 72 / 114,480 ( < 1 % )
+Total registers : 72
 Total pins : 42 / 529 ( 8 % )
 Total virtual pins : 0
 Total memory bits : 4,096 / 3,981,312 ( < 1 % )

@@ -62,6 +62,8 @@ sim:/my_scomp_v0_0/PROC/MEMq \
 sim:/my_scomp_v0_0/PROC/MEMdata \
 sim:/my_scomp_v0_0/PROC/MEMwe \
 sim:/my_scomp_v0_0/PROC/MEMadr \
+sim:/my_scomp_v0_0/PROC/IO_input \
+sim:/my_scomp_v0_0/PROC/IO_output \
 sim:/my_scomp_v0_0/PROC/state
 run -all
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
