@@ -35,8 +35,8 @@ ARCHITECTURE funcional OF vga_top IS
 
 	COMPONENT vga_PLL
 		PORT(
-			inclk0		: IN STD_LOGIC  := '0';
-			c0		: OUT STD_LOGIC );
+			inclk0 : IN STD_LOGIC  := '0';
+			c0	: OUT STD_LOGIC );
 	END COMPONENT;
 	
 	COMPONENT controlador_vga_640_x_480_60
@@ -62,9 +62,9 @@ SIGNAL pixel_x, pixel_y	: STD_LOGIC_VECTOR(9 DOWNTO 0);
 
 BEGIN
 
-R_data  <= pixel_x(7);
-G_data  <= pixel_x(6);
-B_data  <= pixel_x(5);
+R_data  <= pixel_y(7);
+G_data  <= pixel_y(6);
+B_data  <= pixel_y(5);
 
 
 	-- PLL para generar el reloj de 25 MHz

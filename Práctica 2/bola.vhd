@@ -1,11 +1,11 @@
 
 
--- Descripción de una bola cuadrada que se mueve hacia arriba y hacia abajo, 
--- respetando los márgenes superior e inferior de la pantalla.
+-- Descripciï¿½n de una bola cuadrada que se mueve hacia arriba y hacia abajo, 
+-- respetando los mï¿½rgenes superior e inferior de la pantalla.
 --
 -- Basado en ejemplo de Hamblen, J.O., Hall T.S., Furman, M.D.:
 -- Rapid Prototyping of Digital Systems : SOPC Edition, Springer 2008.
--- (Capítulo 10) 
+-- (Capï¿½tulo 10) 
 
 
 LIBRARY IEEE;
@@ -18,7 +18,7 @@ USE lpm.lpm_components.ALL;
 ENTITY bola IS
 	PORT(
 		Red,Green,Blue : OUT std_logic;
-	    vs : IN std_logic;
+	   vs : IN std_logic;
 		pixel_Y, pixel_X : IN std_logic_vector(9 downto 0)
 		);
 END bola;
@@ -34,7 +34,7 @@ architecture funcional of bola is
 	
 BEGIN
 
-Red		<= Bola_on;
+Red	<= Bola_on;
 Green	<= Bola_on;
 Blue	<= Bola_on;
 
@@ -55,7 +55,7 @@ END process Dibujar_Bola;
 
 Mover_Bola: PROCESS (vs)
 BEGIN
-	-- Actualizar la posición de la bola en cada refresco de pantalla
+	-- Actualizar la posiciï¿½n de la bola en cada refresco de pantalla
 	IF vs'event and vs = '1' THEN
 		-- Detectar los bordes superior e inferior de la pantalla
 			IF Bola_Y  >= CONV_STD_LOGIC_VECTOR(479,10) - Size THEN
@@ -64,7 +64,7 @@ BEGIN
 				Desplaza_Bola_Y <= CONV_STD_LOGIC_VECTOR(2,10);
 			END IF;
 			-- Calcular la siguiente posicion de la bola
-			Bola_Y 	  	<= Bola_Y + Desplaza_Bola_Y;
+			Bola_Y <= Bola_Y + Desplaza_Bola_Y;
 	END IF;
 END process Mover_Bola;
 
