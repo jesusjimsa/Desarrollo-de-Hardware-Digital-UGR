@@ -65,7 +65,7 @@ BEGIN
 				Desplaza_Bola_X <= CONV_STD_LOGIC_VECTOR(2,10);
 			END IF;
 			-- Calcular la siguiente posicion de la bola
-			Bola_Y <= Bola_X + Desplaza_Bola_X;
+			Bola_Y <= Bola_Y + Desplaza_Bola_Y;
 	END IF;
 END process Mover_Bola;
 
