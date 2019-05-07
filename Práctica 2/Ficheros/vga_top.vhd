@@ -1,9 +1,9 @@
 
--- Descripci�n que visualiza franjas de colores en un monitor VGA
+-- Descripcion que visualiza franjas de colores en un monitor VGA
 --
 -- Basado en ejemplo de Hamblen, J.O., Hall T.S., Furman, M.D.:
 -- Rapid Prototyping of Digital Systems : SOPC Edition, Springer 2008.
--- (Cap�tulo 10) 
+-- (Capitulo 10) 
 
 
 LIBRARY IEEE;
@@ -18,20 +18,19 @@ USE lpm.lpm_components.ALL;
 ENTITY vga_top IS
 
 PORT(	
-      CLOCK_50			     : IN STD_LOGIC;
-		VGA_R		: OUT STD_LOGIC_vector(0 to 7);
-		VGA_G		: OUT STD_LOGIC_vector(0 to 7);
-		VGA_B		: OUT STD_LOGIC_vector(0 to 7);
-		VGA_BLANK_N		: OUT STD_LOGIC;
-		VGA_HS		: OUT STD_LOGIC;
-		VGA_VS		: OUT STD_LOGIC;
-		VGA_CLK		: OUT STD_LOGIC
-		);
+    CLOCK_50			     : IN STD_LOGIC;
+	VGA_R		: OUT STD_LOGIC_vector(0 to 7);
+	VGA_G		: OUT STD_LOGIC_vector(0 to 7);
+	VGA_B		: OUT STD_LOGIC_vector(0 to 7);
+	VGA_BLANK_N		: OUT STD_LOGIC;
+	VGA_HS		: OUT STD_LOGIC;
+	VGA_VS		: OUT STD_LOGIC;
+	VGA_CLK		: OUT STD_LOGIC
+);
 
 END vga_top;
 
 ARCHITECTURE funcional OF vga_top IS
-
 
 	COMPONENT vga_PLL
 		PORT(
