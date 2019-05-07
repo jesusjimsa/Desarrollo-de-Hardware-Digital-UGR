@@ -179,3 +179,30 @@ pixel_x[8] <= pixel_x[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 pixel_x[9] <= pixel_x[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
+|vga_top|bola:BALL
+Red <= <GND>
+Green <= <GND>
+Blue <= <GND>
+vs => ~NO_FANOUT~
+pixel_Y[0] => ~NO_FANOUT~
+pixel_Y[1] => ~NO_FANOUT~
+pixel_Y[2] => ~NO_FANOUT~
+pixel_Y[3] => ~NO_FANOUT~
+pixel_Y[4] => ~NO_FANOUT~
+pixel_Y[5] => ~NO_FANOUT~
+pixel_Y[6] => ~NO_FANOUT~
+pixel_Y[7] => ~NO_FANOUT~
+pixel_Y[8] => ~NO_FANOUT~
+pixel_Y[9] => ~NO_FANOUT~
+pixel_X[0] => ~NO_FANOUT~
+pixel_X[1] => ~NO_FANOUT~
+pixel_X[2] => ~NO_FANOUT~
+pixel_X[3] => ~NO_FANOUT~
+pixel_X[4] => ~NO_FANOUT~
+pixel_X[5] => ~NO_FANOUT~
+pixel_X[6] => ~NO_FANOUT~
+pixel_X[7] => ~NO_FANOUT~
+pixel_X[8] => ~NO_FANOUT~
+pixel_X[9] => ~NO_FANOUT~
+
+

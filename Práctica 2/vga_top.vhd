@@ -49,29 +49,39 @@ ARCHITECTURE funcional OF vga_top IS
 			vga_vs		:	OUT     STD_LOGIC;
 			vga_clk		:	OUT     STD_LOGIC;
 			pixel_y		:	OUT     STD_LOGIC_VECTOR(9 DOWNTO 0);
-			pixel_x		:	OUT	STD_LOGIC_VECTOR(9 DOWNTO 0));		
+			pixel_x		:	OUT	STD_LOGIC_VECTOR(9 DOWNTO 0)
+		);		
 	END COMPONENT;
 	
+	COMPONENT bola IS
+		PORT(
+			Red,Green,Blue : OUT std_logic;
+			vs : IN std_logic;
+			pixel_Y, pixel_X : IN std_logic_vector(9 downto 0)
+		);
+	END COMPONENT;
 
 
 SIGNAL clock_25 : STD_LOGIC;
 SIGNAL R_Data, G_Data, B_Data : STD_LOGIC;
 SIGNAL pixel_x, pixel_y	: STD_LOGIC_VECTOR(9 DOWNTO 0);
+SIGNAL vs_top : STD_LOGIC;
 
 
 
 BEGIN
 
-R_data  <= pixel_y(7);
-G_data  <= pixel_y(6);
-B_data  <= pixel_y(5);
+--R_data  <= pixel_y(7);
+--G_data  <= pixel_x(6);
+--B_data  <= pixel_y(5);
 
+VGA_VS <= vs_top;
 
 	-- PLL para generar el reloj de 25 MHz
 PLL: vga_pll PORT MAP (
 		inclk0 => clock_50,
-		c0 => clock_25);
-		
+		c0 => clock_25
+);
 
 	-- Controlador de la VGA
 VGA:  controlador_vga_640_x_480_60 PORT MAP (	
@@ -84,11 +94,21 @@ VGA:  controlador_vga_640_x_480_60 PORT MAP (
 		vga_b => vga_b(7),
 		vga_blank_n => vga_blank_n,
 		vga_hs => vga_hs, 
-		vga_vs => vga_vs, 
+		vga_vs => vs_top, 
 		vga_clk	=> vga_clk,
 		pixel_y => pixel_y, 
-		pixel_x => pixel_x);		
-			
+		pixel_x => pixel_x
+);
+
+	-- Controlador de la bola
+BALL: bola PORT MAP(
+		Red => R_data,
+		Green => G_data,
+		Blue => B_data,
+		vs => vs_top,
+		pixel_Y => pixel_y,
+		pixel_X => pixel_x
+);
 			 	
 
 END funcional;

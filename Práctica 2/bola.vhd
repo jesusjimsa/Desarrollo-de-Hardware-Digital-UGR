@@ -20,7 +20,7 @@ ENTITY bola IS
 		Red,Green,Blue : OUT std_logic;
 	   vs : IN std_logic;
 		pixel_Y, pixel_X : IN std_logic_vector(9 downto 0)
-		);
+	);
 END bola;
 
 architecture funcional of bola is
@@ -30,6 +30,7 @@ architecture funcional of bola is
 
 	CONSTANT Size: std_logic_vector(9 DOWNTO 0):= CONV_STD_LOGIC_VECTOR(8,10);
 	CONSTANT Bola_X : STD_LOGIC_VECTOR(9 DOWNTO 0):= CONV_STD_LOGIC_VECTOR(320,10);
+	SIGNAL Desplaza_Bola_X: STD_LOGIC_VECTOR(9 DOWNTO 0);
 
 	
 BEGIN
@@ -58,13 +59,13 @@ BEGIN
 	-- Actualizar la posici�n de la bola en cada refresco de pantalla
 	IF vs'event and vs = '1' THEN
 		-- Detectar los bordes superior e inferior de la pantalla
-			IF Bola_Y  >= CONV_STD_LOGIC_VECTOR(479,10) - Size THEN
-				Desplaza_Bola_Y <= CONV_STD_LOGIC_VECTOR(-2,10);
-			ELSIF  Bola_Y <= Size  THEN
-				Desplaza_Bola_Y <= CONV_STD_LOGIC_VECTOR(2,10);
+			IF Bola_X  >= CONV_STD_LOGIC_VECTOR(479,10) - Size THEN
+				Desplaza_Bola_X <= CONV_STD_LOGIC_VECTOR(-2,10);
+			ELSIF  Bola_X <= Size  THEN
+				Desplaza_Bola_X <= CONV_STD_LOGIC_VECTOR(2,10);
 			END IF;
 			-- Calcular la siguiente posicion de la bola
-			Bola_Y <= Bola_Y + Desplaza_Bola_Y;
+			Bola_Y <= Bola_X + Desplaza_Bola_X;
 	END IF;
 END process Mover_Bola;
 
