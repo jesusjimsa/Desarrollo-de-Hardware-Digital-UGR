@@ -17,14 +17,16 @@ USE lpm.lpm_components.ALL;
 ENTITY vga_top IS
 
 PORT(
-    CLOCK_50			     : IN STD_LOGIC;
+	CLOCK_50			     : IN STD_LOGIC;
 	VGA_R		: OUT STD_LOGIC_vector(0 to 7);
 	VGA_G		: OUT STD_LOGIC_vector(0 to 7);
 	VGA_B		: OUT STD_LOGIC_vector(0 to 7);
 	VGA_BLANK_N		: OUT STD_LOGIC;
 	VGA_HS		: OUT STD_LOGIC;
 	VGA_VS		: OUT STD_LOGIC;
-	VGA_CLK		: OUT STD_LOGIC
+	VGA_CLK		: OUT STD_LOGIC;
+	UP		: IN STD_LOGIC;	-- PIN_M23
+	DOWN		: IN STD_LOGIC	-- PIN_M21
 );
 
 END vga_top;
@@ -34,19 +36,20 @@ ARCHITECTURE funcional OF vga_top IS
 	COMPONENT vga_PLL
 		PORT(
 			inclk0 : IN STD_LOGIC  := '0';
-			c0	: OUT STD_LOGIC );
+			c0	: OUT STD_LOGIC
+		);
 	END COMPONENT;
 
 	COMPONENT controlador_vga_640_x_480_60
 		PORT(
 			clock_25		: 	IN	STD_LOGIC;
-			R,G,B       : 	     IN	     STD_LOGIC;
+			R,G,B       : 	IN	STD_LOGIC;
 			VGA_R, VGA_G, VGA_B		:	OUT	STD_LOGIC;
 			vga_blank_N	:	OUT	STD_LOGIC;
-			vga_hs		:	OUT     STD_LOGIC;
-			vga_vs		:	OUT     STD_LOGIC;
-			vga_clk		:	OUT     STD_LOGIC;
-			pixel_y		:	OUT     STD_LOGIC_VECTOR(9 DOWNTO 0);
+			vga_hs		:	OUT   STD_LOGIC;
+			vga_vs		:	OUT   STD_LOGIC;
+			vga_clk		:	OUT   STD_LOGIC;
+			pixel_y		:	OUT   STD_LOGIC_VECTOR(9 DOWNTO 0);
 			pixel_x		:	OUT	STD_LOGIC_VECTOR(9 DOWNTO 0)
 		);
 	END COMPONENT;
@@ -63,7 +66,8 @@ ARCHITECTURE funcional OF vga_top IS
 		PORT(
 			Red,Green,Blue : OUT std_logic;
 			vs : IN std_logic;
-			pixel_Y, pixel_X : IN std_logic_vector(9 downto 0)
+			pixel_Y, pixel_X : IN std_logic_vector(9 downto 0);
+			Pala_arriba, Pala_abajo : IN std_logic
 		);
 	END COMPONENT;
 
@@ -73,8 +77,6 @@ SIGNAL R_Data, G_Data, B_Data : STD_LOGIC;
 SIGNAL pixel_x, pixel_y	: STD_LOGIC_VECTOR(9 DOWNTO 0);
 SIGNAL vs_top : STD_LOGIC;
 
-
-
 BEGIN
 
 --R_data  <= pixel_y(7);
@@ -83,13 +85,13 @@ BEGIN
 
 VGA_VS <= vs_top;
 
-	-- PLL para generar el reloj de 25 MHz
+-- PLL para generar el reloj de 25 MHz
 PLL: vga_pll PORT MAP (
 		inclk0 => clock_50,
 		c0 => clock_25
 );
 
-	-- Controlador de la VGA
+-- Controlador de la VGA
 VGA:  controlador_vga_640_x_480_60 PORT MAP (
 		clock_25	=> clock_25,
 		R => R_data,
@@ -106,7 +108,7 @@ VGA:  controlador_vga_640_x_480_60 PORT MAP (
 		pixel_x => pixel_x
 );
 
-	-- Controlador de la bola
+-- Controlador de la bola
 BALL: bola PORT MAP(
 		Red => R_data,
 		Green => G_data,
@@ -116,14 +118,16 @@ BALL: bola PORT MAP(
 		pixel_X => pixel_x
 );
 
-	-- Controlador de la bola
+-- Controlador de la bola
 BLADE: pala PORT MAP(
 		Red => R_data,
 		Green => G_data,
 		Blue => B_data,
 		vs => vs_top,
 		pixel_Y => pixel_y,
-		pixel_X => pixel_x
+		pixel_X => pixel_x,
+		Pala_abajo => Down,
+		Pala_arriba => Up
 );
 
 END funcional;

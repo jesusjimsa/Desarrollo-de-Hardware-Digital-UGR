@@ -51,7 +51,7 @@ Mover_Bola: PROCESS (vs)
 BEGIN
 	-- Actualizar la posicion de la bola en cada refresco de pantalla
 	IF vs'event and vs = '1' THEN
-		-- Detectar los bordes superior e inferior de la pantalla
+			-- Detectar los bordes superior e inferior de la pantalla
 			IF Bola_Y  >= CONV_STD_LOGIC_VECTOR(479,10) - Size THEN
 				Desplaza_Bola_Y <= CONV_STD_LOGIC_VECTOR(-2,10);
 			ELSIF  Bola_Y <= Size  THEN
@@ -60,11 +60,13 @@ BEGIN
 			-- Calcular la siguiente posicion de la bola
 			Bola_Y <= Bola_Y + Desplaza_Bola_Y;
 			
+			-- Detectar los bordes derecho e izquierda de la pantalla
 			IF Bola_X  >= CONV_STD_LOGIC_VECTOR(639,10) - Size THEN
 				Desplaza_Bola_X <= CONV_STD_LOGIC_VECTOR(-2,10);
 			ELSIF  Bola_X <= Size  THEN
 				Desplaza_Bola_X <= CONV_STD_LOGIC_VECTOR(2,10);
 			END IF;
+			
 			-- Calcular la siguiente posicion de la bola
 			Bola_X <= Bola_X + Desplaza_Bola_X;
 	END IF;
