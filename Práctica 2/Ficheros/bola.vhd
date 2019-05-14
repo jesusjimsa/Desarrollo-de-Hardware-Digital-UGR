@@ -15,7 +15,7 @@ USE lpm.lpm_components.ALL;
 
 ENTITY bola IS
 	PORT(
-		Red,Green,Blue : OUT std_logic;
+		Red, Green, Blue : OUT std_logic;
 		vs : IN std_logic;
 		pixel_Y, pixel_X : IN std_logic_vector(9 downto 0)
 	);

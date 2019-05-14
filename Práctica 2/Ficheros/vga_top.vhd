@@ -56,7 +56,7 @@ ARCHITECTURE funcional OF vga_top IS
 
 	COMPONENT bola IS
 		PORT(
-			Red,Green,Blue : OUT std_logic;
+			Red, Green, Blue : OUT std_logic;
 			vs : IN std_logic;
 			pixel_Y, pixel_X : IN std_logic_vector(9 downto 0)
 		);
@@ -64,7 +64,7 @@ ARCHITECTURE funcional OF vga_top IS
 
 	COMPONENT pala IS
 		PORT(
-			Red,Green,Blue : OUT std_logic;
+			Red, Green, Blue : OUT std_logic;
 			vs : IN std_logic;
 			pixel_Y, pixel_X : IN std_logic_vector(9 downto 0);
 			Pala_arriba, Pala_abajo : IN std_logic
