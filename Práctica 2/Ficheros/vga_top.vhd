@@ -74,6 +74,8 @@ ARCHITECTURE funcional OF vga_top IS
 
 SIGNAL clock_25 : STD_LOGIC;
 SIGNAL R_Data, G_Data, B_Data : STD_LOGIC;
+SIGNAL R_Bola, G_Bola, B_Bola : STD_LOGIC;
+SIGNAL R_Pala, G_Pala, B_Pala : STD_LOGIC;
 SIGNAL pixel_x, pixel_y	: STD_LOGIC_VECTOR(9 DOWNTO 0);
 SIGNAL vs_top : STD_LOGIC;
 
@@ -94,9 +96,9 @@ PLL: vga_pll PORT MAP (
 -- Controlador de la VGA
 VGA:  controlador_vga_640_x_480_60 PORT MAP (
 		clock_25	=> clock_25,
-		R => R_data,
-		g => G_data,
-		b => B_data,
+		R => R_Data or R_Bola or R_Pala,
+		g => G_Data or G_Bola or G_Pala,
+		b => B_Data or B_Bola or B_Pala,
 		vga_r	=> vga_R(7),
 		vga_g => vga_g(7),
 		vga_b => vga_b(7),
@@ -110,9 +112,9 @@ VGA:  controlador_vga_640_x_480_60 PORT MAP (
 
 -- Controlador de la bola
 BALL: bola PORT MAP(
-		Red => R_data,
-		Green => G_data,
-		Blue => B_data,
+		Red => R_Bola,
+		Green => G_Bola,
+		Blue => B_Bola,
 		vs => vs_top,
 		pixel_Y => pixel_y,
 		pixel_X => pixel_x
@@ -120,9 +122,9 @@ BALL: bola PORT MAP(
 
 -- Controlador de la bola
 BLADE: pala PORT MAP(
-		Red => R_data,
-		Green => G_data,
-		Blue => B_data,
+		Red => R_Pala,
+		Green => G_Pala,
+		Blue => B_Pala,
 		vs => vs_top,
 		pixel_Y => pixel_y,
 		pixel_X => pixel_x,

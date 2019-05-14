@@ -1,5 +1,5 @@
 Analysis & Synthesis report for vga_top
-Tue May 14 11:21:39 2019
+Tue May 14 12:25:01 2019
 Quartus II 32-bit Version 12.0 Build 263 08/02/2012 Service Pack 2 SJ Web Edition
 
 
@@ -10,9 +10,19 @@ Quartus II 32-bit Version 12.0 Build 263 08/02/2012 Service Pack 2 SJ Web Editio
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis IP Cores Summary
-  6. Parameter Settings for User Entity Instance: vga_pll:PLL|altpll:altpll_component
-  7. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis IP Cores Summary
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: vga_pll:PLL|altpll:altpll_component
+ 12. altpll Parameter Settings by Entity Instance
+ 13. Port Connectivity Checks: "pala:BLADE"
+ 14. Port Connectivity Checks: "bola:BALL"
+ 15. Port Connectivity Checks: "controlador_vga_640_x_480_60:VGA"
+ 16. Elapsed Time Per Partition
+ 17. Analysis & Synthesis Messages
 
 
 
@@ -38,20 +48,20 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                       ;
 +------------------------------------+-----------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Tue May 14 11:21:39 2019             ;
+; Analysis & Synthesis Status        ; Successful - Tue May 14 12:25:01 2019         ;
 ; Quartus II 32-bit Version          ; 12.0 Build 263 08/02/2012 SP 2 SJ Web Edition ;
 ; Revision Name                      ; vga_top                                       ;
 ; Top-level Entity Name              ; vga_top                                       ;
 ; Family                             ; Cyclone IV E                                  ;
-; Total logic elements               ; N/A until Partition Merge                     ;
-;     Total combinational functions  ; N/A until Partition Merge                     ;
-;     Dedicated logic registers      ; N/A until Partition Merge                     ;
-; Total registers                    ; N/A until Partition Merge                     ;
-; Total pins                         ; N/A until Partition Merge                     ;
-; Total virtual pins                 ; N/A until Partition Merge                     ;
-; Total memory bits                  ; N/A until Partition Merge                     ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                     ;
-; Total PLLs                         ; N/A until Partition Merge                     ;
+; Total logic elements               ; 57                                            ;
+;     Total combinational functions  ; 51                                            ;
+;     Dedicated logic registers      ; 29                                            ;
+; Total registers                    ; 29                                            ;
+; Total pins                         ; 31                                            ;
+; Total virtual pins                 ; 0                                             ;
+; Total memory bits                  ; 0                                             ;
+; Embedded Multiplier 9-bit elements ; 0                                             ;
+; Total PLLs                         ; 1                                             ;
 +------------------------------------+-----------------------------------------------+
 
 
@@ -152,6 +162,69 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                         ;
++----------------------------------+-----------------+-----------------------------+---------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                   ; File Name with Absolute Path                                                                      ; Library ;
++----------------------------------+-----------------+-----------------------------+---------------------------------------------------------------------------------------------------+---------+
+; vga_top.vhd                      ; yes             ; User VHDL File              ; C:/Documents and Settings/jesusjimsa/Mis documentos/Descargas/p2/vga_top.vhd                      ;         ;
+; vga_pll.vhd                      ; yes             ; User Wizard-Generated File  ; C:/Documents and Settings/jesusjimsa/Mis documentos/Descargas/p2/vga_pll.vhd                      ;         ;
+; controlador_vga_640_x_480_60.vhd ; yes             ; User VHDL File              ; C:/Documents and Settings/jesusjimsa/Mis documentos/Descargas/p2/controlador_vga_640_x_480_60.vhd ;         ;
+; altpll.tdf                       ; yes             ; Megafunction                ; c:/altera/12.0sp2/quartus/libraries/megafunctions/altpll.tdf                                      ;         ;
+; aglobal120.inc                   ; yes             ; Megafunction                ; c:/altera/12.0sp2/quartus/libraries/megafunctions/aglobal120.inc                                  ;         ;
+; stratix_pll.inc                  ; yes             ; Megafunction                ; c:/altera/12.0sp2/quartus/libraries/megafunctions/stratix_pll.inc                                 ;         ;
+; stratixii_pll.inc                ; yes             ; Megafunction                ; c:/altera/12.0sp2/quartus/libraries/megafunctions/stratixii_pll.inc                               ;         ;
+; cycloneii_pll.inc                ; yes             ; Megafunction                ; c:/altera/12.0sp2/quartus/libraries/megafunctions/cycloneii_pll.inc                               ;         ;
+; bola.vhd                         ; yes             ; Auto-Found VHDL File        ; C:/Documents and Settings/jesusjimsa/Mis documentos/Descargas/p2/bola.vhd                         ;         ;
+; pala.vhd                         ; yes             ; Auto-Found VHDL File        ; C:/Documents and Settings/jesusjimsa/Mis documentos/Descargas/p2/pala.vhd                         ;         ;
++----------------------------------+-----------------+-----------------------------+---------------------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                             ;
++---------------------------------------------+-------------------------------------------+
+; Resource                                    ; Usage                                     ;
++---------------------------------------------+-------------------------------------------+
+; Estimated Total logic elements              ; 57                                        ;
+;                                             ;                                           ;
+; Total combinational functions               ; 51                                        ;
+; Logic element usage by number of LUT inputs ;                                           ;
+;     -- 4 input functions                    ; 25                                        ;
+;     -- 3 input functions                    ; 2                                         ;
+;     -- <=2 input functions                  ; 24                                        ;
+;                                             ;                                           ;
+; Logic elements by mode                      ;                                           ;
+;     -- normal mode                          ; 33                                        ;
+;     -- arithmetic mode                      ; 18                                        ;
+;                                             ;                                           ;
+; Total registers                             ; 29                                        ;
+;     -- Dedicated logic registers            ; 29                                        ;
+;     -- I/O registers                        ; 0                                         ;
+;                                             ;                                           ;
+; I/O pins                                    ; 31                                        ;
+; Total PLLs                                  ; 1                                         ;
+;     -- PLLs                                 ; 1                                         ;
+;                                             ;                                           ;
+; Maximum fan-out node                        ; vga_pll:PLL|altpll:altpll_component|_clk0 ;
+; Maximum fan-out                             ; 31                                        ;
+; Total fan-out                               ; 250                                       ;
+; Average fan-out                             ; 1.75                                      ;
++---------------------------------------------+-------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                             ;
++---------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------+--------------+
+; Compilation Hierarchy Node            ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                          ; Library Name ;
++---------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------+--------------+
+; |vga_top                              ; 51 (0)            ; 29 (0)       ; 0           ; 0            ; 0       ; 0         ; 31   ; 0            ; |vga_top                                     ;              ;
+;    |controlador_vga_640_x_480_60:VGA| ; 51 (51)           ; 29 (29)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vga_top|controlador_vga_640_x_480_60:VGA    ;              ;
+;    |vga_pll:PLL|                      ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vga_top|vga_pll:PLL                         ;              ;
+;       |altpll:altpll_component|       ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vga_top|vga_pll:PLL|altpll:altpll_component ;              ;
++---------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Analysis & Synthesis IP Cores Summary                                                                                                                               ;
 +--------+--------------+---------+--------------+--------------+----------------------+------------------------------------------------------------------------------+
@@ -159,6 +232,30 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------+--------------+---------+--------------+--------------+----------------------+------------------------------------------------------------------------------+
 ; Altera ; ALTPLL       ; N/A     ; N/A          ; N/A          ; |vga_top|vga_pll:PLL ; C:/Documents and Settings/jesusjimsa/Mis documentos/Descargas/p2/vga_pll.vhd ;
 +--------+--------------+---------+--------------+--------------+----------------------+------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 29    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------------------------------------------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered                                           ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------------------------------------------------+----------------------------+
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; |vga_top|controlador_vga_640_x_480_60:VGA|cont_vs[9] ;                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------------------------------------------------+----------------------------+
 
 
 +----------------------------------------------------------------------------------+
@@ -535,13 +632,72 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++---------------------------------------------------------------------+
+; altpll Parameter Settings by Entity Instance                        ;
++-------------------------------+-------------------------------------+
+; Name                          ; Value                               ;
++-------------------------------+-------------------------------------+
+; Number of entity instances    ; 1                                   ;
+; Entity Instance               ; vga_pll:PLL|altpll:altpll_component ;
+;     -- OPERATION_MODE         ; NORMAL                              ;
+;     -- PLL_TYPE               ; AUTO                                ;
+;     -- PRIMARY_CLOCK          ; INCLK0                              ;
+;     -- INCLK0_INPUT_FREQUENCY ; 20000                               ;
+;     -- INCLK1_INPUT_FREQUENCY ; 0                                   ;
+;     -- VCO_MULTIPLY_BY        ; 0                                   ;
+;     -- VCO_DIVIDE_BY          ; 0                                   ;
++-------------------------------+-------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "pala:BLADE"                                                                          ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; red   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; green ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; blue  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bola:BALL"                                                                           ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; red   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; green ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; blue  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------+
+; Port Connectivity Checks: "controlador_vga_640_x_480_60:VGA" ;
++------+-------+----------+------------------------------------+
+; Port ; Type  ; Severity ; Details                            ;
++------+-------+----------+------------------------------------+
+; r    ; Input ; Info     ; Stuck at VCC                       ;
+; g    ; Input ; Info     ; Stuck at VCC                       ;
+; b    ; Input ; Info     ; Stuck at VCC                       ;
++------+-------+----------+------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 12.0 Build 263 08/02/2012 Service Pack 2 SJ Web Edition
-    Info: Processing started: Tue May 14 11:21:38 2019
+    Info: Processing started: Tue May 14 12:24:59 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off vga_top -c vga_top
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file vga_top.vhd
@@ -554,6 +710,9 @@ Info (12021): Found 2 design units, including 1 entities, in source file control
     Info (12022): Found design unit 1: controlador_vga_640_x_480_60-rtl
     Info (12023): Found entity 1: controlador_vga_640_x_480_60
 Info (12127): Elaborating entity "vga_top" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at vga_top.vhd(76): used implicit default value for signal "R_Data" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at vga_top.vhd(76): used implicit default value for signal "G_Data" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at vga_top.vhd(76): used implicit default value for signal "B_Data" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
 Warning (10873): Using initial value X (don't care) for net "VGA_R[0..6]" at vga_top.vhd(21)
 Warning (10873): Using initial value X (don't care) for net "VGA_G[0..6]" at vga_top.vhd(22)
 Warning (10873): Using initial value X (don't care) for net "VGA_B[0..6]" at vga_top.vhd(23)
@@ -622,19 +781,43 @@ Warning (12125): Using design file pala.vhd, which is not specified as a design 
     Info (12023): Found entity 1: pala
 Info (12128): Elaborating entity "pala" for hierarchy "pala:BLADE"
 Warning (10492): VHDL Process Statement warning at pala.vhd(43): signal "Pala_X" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Error (12014): Net "R_Data", which fans out to "controlador_vga_640_x_480_60:VGA|r", cannot be assigned more than one value File: C:/Documents and Settings/jesusjimsa/Mis documentos/Descargas/p2/vga_top.vhd Line: 76
-    Error (12015): Net is fed by "bola:BALL|Red" File: C:/Documents and Settings/jesusjimsa/Mis documentos/Descargas/p2/bola.vhd Line: 18
-    Error (12015): Net is fed by "pala:BLADE|Red" File: C:/Documents and Settings/jesusjimsa/Mis documentos/Descargas/p2/pala.vhd Line: 18
-Error (12014): Net "G_Data", which fans out to "controlador_vga_640_x_480_60:VGA|g", cannot be assigned more than one value File: C:/Documents and Settings/jesusjimsa/Mis documentos/Descargas/p2/vga_top.vhd Line: 76
-    Error (12015): Net is fed by "bola:BALL|Green" File: C:/Documents and Settings/jesusjimsa/Mis documentos/Descargas/p2/bola.vhd Line: 18
-    Error (12015): Net is fed by "pala:BLADE|Green" File: C:/Documents and Settings/jesusjimsa/Mis documentos/Descargas/p2/pala.vhd Line: 18
-Error (12014): Net "B_Data", which fans out to "controlador_vga_640_x_480_60:VGA|b", cannot be assigned more than one value File: C:/Documents and Settings/jesusjimsa/Mis documentos/Descargas/p2/vga_top.vhd Line: 76
-    Error (12015): Net is fed by "bola:BALL|Blue" File: C:/Documents and Settings/jesusjimsa/Mis documentos/Descargas/p2/bola.vhd Line: 18
-    Error (12015): Net is fed by "pala:BLADE|Blue" File: C:/Documents and Settings/jesusjimsa/Mis documentos/Descargas/p2/pala.vhd Line: 18
-Error: Quartus II 32-bit Analysis & Synthesis was unsuccessful. 9 errors, 8 warnings
-    Error: Peak virtual memory: 302 megabytes
-    Error: Processing ended: Tue May 14 11:21:39 2019
-    Error: Elapsed time: 00:00:01
-    Error: Total CPU time (on all processors): 00:00:01
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "VGA_R[6]" is stuck at GND
+    Warning (13410): Pin "VGA_R[5]" is stuck at GND
+    Warning (13410): Pin "VGA_R[4]" is stuck at GND
+    Warning (13410): Pin "VGA_R[3]" is stuck at GND
+    Warning (13410): Pin "VGA_R[2]" is stuck at GND
+    Warning (13410): Pin "VGA_R[1]" is stuck at GND
+    Warning (13410): Pin "VGA_R[0]" is stuck at GND
+    Warning (13410): Pin "VGA_G[6]" is stuck at GND
+    Warning (13410): Pin "VGA_G[5]" is stuck at GND
+    Warning (13410): Pin "VGA_G[4]" is stuck at GND
+    Warning (13410): Pin "VGA_G[3]" is stuck at GND
+    Warning (13410): Pin "VGA_G[2]" is stuck at GND
+    Warning (13410): Pin "VGA_G[1]" is stuck at GND
+    Warning (13410): Pin "VGA_G[0]" is stuck at GND
+    Warning (13410): Pin "VGA_B[6]" is stuck at GND
+    Warning (13410): Pin "VGA_B[5]" is stuck at GND
+    Warning (13410): Pin "VGA_B[4]" is stuck at GND
+    Warning (13410): Pin "VGA_B[3]" is stuck at GND
+    Warning (13410): Pin "VGA_B[2]" is stuck at GND
+    Warning (13410): Pin "VGA_B[1]" is stuck at GND
+    Warning (13410): Pin "VGA_B[0]" is stuck at GND
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "UP"
+    Warning (15610): No output dependent on input pin "DOWN"
+Info (21057): Implemented 89 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 28 output pins
+    Info (21061): Implemented 57 logic cells
+    Info (21065): Implemented 1 PLLs
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 36 warnings
+    Info: Peak virtual memory: 306 megabytes
+    Info: Processing ended: Tue May 14 12:25:01 2019
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
 
 
