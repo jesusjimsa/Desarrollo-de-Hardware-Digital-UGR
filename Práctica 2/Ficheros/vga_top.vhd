@@ -56,7 +56,7 @@ ARCHITECTURE funcional OF vga_top IS
 
 	COMPONENT bola IS
 		PORT(
-			Red, Green, Blue : OUT std_logic;
+			Red_bola, Green_bola, Blue_bola : OUT std_logic;
 			vs : IN std_logic;
 			pixel_Y, pixel_X : IN std_logic_vector(9 downto 0)
 		);
@@ -64,7 +64,7 @@ ARCHITECTURE funcional OF vga_top IS
 
 	COMPONENT pala IS
 		PORT(
-			Red, Green, Blue : OUT std_logic;
+			Red_pala, Green_pala, Blue_pala : OUT std_logic;
 			vs : IN std_logic;
 			pixel_Y, pixel_X : IN std_logic_vector(9 downto 0);
 			Pala_arriba, Pala_abajo : IN std_logic
@@ -96,9 +96,9 @@ PLL: vga_pll PORT MAP (
 -- Controlador de la VGA
 VGA:  controlador_vga_640_x_480_60 PORT MAP (
 		clock_25	=> clock_25,
-		R => R_Data or R_Bola or R_Pala,
-		g => G_Data or G_Bola or G_Pala,
-		b => B_Data or B_Bola or B_Pala,
+		R => R_Bola or R_Pala,
+		g => G_Bola or G_Pala,
+		b => B_Bola or B_Pala,
 		vga_r	=> vga_R(7),
 		vga_g => vga_g(7),
 		vga_b => vga_b(7),
@@ -112,9 +112,9 @@ VGA:  controlador_vga_640_x_480_60 PORT MAP (
 
 -- Controlador de la bola
 BALL: bola PORT MAP(
-		Red => R_Bola,
-		Green => G_Bola,
-		Blue => B_Bola,
+		Red_bola => R_Bola,
+		Green_bola => G_Bola,
+		Blue_bola => B_Bola,
 		vs => vs_top,
 		pixel_Y => pixel_y,
 		pixel_X => pixel_x
@@ -122,9 +122,9 @@ BALL: bola PORT MAP(
 
 -- Controlador de la bola
 BLADE: pala PORT MAP(
-		Red => R_Pala,
-		Green => G_Pala,
-		Blue => B_Pala,
+		Red_pala => R_Pala,
+		Green_pala => G_Pala,
+		Blue_pala => B_Pala,
 		vs => vs_top,
 		pixel_Y => pixel_y,
 		pixel_X => pixel_x,
